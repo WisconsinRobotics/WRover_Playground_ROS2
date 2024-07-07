@@ -1,0 +1,2 @@
+source;share/wrover_mock/environment/ament_prefix_path.sh
+source;share/wrover_mock/environment/path.sh

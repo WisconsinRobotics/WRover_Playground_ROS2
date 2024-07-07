@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/WRover_Mock/WRover_Mock.egg-info/PKG-INFO
+writing dependency_links to ../../build/WRover_Mock/WRover_Mock.egg-info/dependency_links.txt
+writing entry points to ../../build/WRover_Mock/WRover_Mock.egg-info/entry_points.txt
+writing requirements to ../../build/WRover_Mock/WRover_Mock.egg-info/requires.txt
+writing top-level names to ../../build/WRover_Mock/WRover_Mock.egg-info/top_level.txt
+reading manifest file '../../build/WRover_Mock/WRover_Mock.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/WRover_Mock/WRover_Mock.egg-info/SOURCES.txt'
+running build
+running build_py
+copying WRover_Mock/Robot.py -> /home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/build/lib/WRover_Mock
+running install
+running install_lib
+copying /home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/build/lib/WRover_Mock/Robot.py -> /home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock
+byte-compiling /home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock/Robot.py to Robot.cpython-312.pyc
+running install_data
+running install_egg_info
+removing '/home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/WRover_Mock/WRover_Mock.egg-info to /home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock-0.0.0-py3.12.egg-info
+running install_scripts
+Installing Robot script to /home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/WRover_Mock
+writing list of installed files to '/home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/install.log'

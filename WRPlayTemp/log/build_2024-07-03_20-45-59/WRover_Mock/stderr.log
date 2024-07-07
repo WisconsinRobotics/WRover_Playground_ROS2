@@ -1,0 +1,6 @@
+Sorry: IndentationError: unexpected indent (AbstractRobot.py, line 104)
+  File "/home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock/Robot.py", line 24
+    10)queue_size=
+       ^^^^^^^^^^
+SyntaxError: invalid syntax
+

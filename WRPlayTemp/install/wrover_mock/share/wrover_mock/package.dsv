@@ -1,0 +1,8 @@
+source;share/wrover_mock/hook/cmake_prefix_path.ps1
+source;share/wrover_mock/hook/cmake_prefix_path.dsv
+source;share/wrover_mock/hook/cmake_prefix_path.sh
+source;share/wrover_mock/local_setup.bash
+source;share/wrover_mock/local_setup.dsv
+source;share/wrover_mock/local_setup.ps1
+source;share/wrover_mock/local_setup.sh
+source;share/wrover_mock/local_setup.zsh

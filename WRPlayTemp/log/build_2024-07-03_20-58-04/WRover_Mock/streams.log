@@ -1,0 +1,25 @@
+[2.455s] Invoking command in '/home/balabalu/workspace/WRPlayTemp/src/WRover_Mock': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/prefix_override:/home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/WRover_Mock build --build-base /home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/build install --record /home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/install.log --single-version-externally-managed install_data
+[3.254s] running egg_info
+[3.303s] writing ../../build/WRover_Mock/WRover_Mock.egg-info/PKG-INFO
+[3.304s] writing dependency_links to ../../build/WRover_Mock/WRover_Mock.egg-info/dependency_links.txt
+[3.306s] writing entry points to ../../build/WRover_Mock/WRover_Mock.egg-info/entry_points.txt
+[3.306s] writing requirements to ../../build/WRover_Mock/WRover_Mock.egg-info/requires.txt
+[3.306s] writing top-level names to ../../build/WRover_Mock/WRover_Mock.egg-info/top_level.txt
+[3.403s] reading manifest file '../../build/WRover_Mock/WRover_Mock.egg-info/SOURCES.txt'
+[3.408s] adding license file 'LICENSE'
+[3.408s] writing manifest file '../../build/WRover_Mock/WRover_Mock.egg-info/SOURCES.txt'
+[3.408s] running build
+[3.408s] running build_py
+[3.409s] copying WRover_Mock/Robot.py -> /home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/build/lib/WRover_Mock
+[3.410s] running install
+[3.421s] running install_lib
+[3.481s] copying /home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/build/lib/WRover_Mock/Robot.py -> /home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock
+[3.484s] byte-compiling /home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock/Robot.py to Robot.cpython-312.pyc
+[3.486s] running install_data
+[3.486s] running install_egg_info
+[3.546s] removing '/home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock-0.0.0-py3.12.egg-info' (and everything under it)
+[3.547s] Copying ../../build/WRover_Mock/WRover_Mock.egg-info to /home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock-0.0.0-py3.12.egg-info
+[3.547s] running install_scripts
+[3.872s] Installing Robot script to /home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/WRover_Mock
+[3.873s] writing list of installed files to '/home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/install.log'
+[3.953s] Invoked command in '/home/balabalu/workspace/WRPlayTemp/src/WRover_Mock' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/prefix_override:/home/balabalu/workspace/WRPlayTemp/install/WRover_Mock/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/WRover_Mock build --build-base /home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/build install --record /home/balabalu/workspace/WRPlayTemp/build/WRover_Mock/install.log --single-version-externally-managed install_data

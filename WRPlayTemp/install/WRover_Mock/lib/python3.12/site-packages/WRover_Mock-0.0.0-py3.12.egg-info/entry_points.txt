@@ -1,0 +1,2 @@
+[console_scripts]
+Robot = WRover_Mock.Robot:main
