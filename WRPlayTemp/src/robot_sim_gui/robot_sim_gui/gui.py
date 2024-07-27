@@ -6,7 +6,7 @@ from rclpy.node import Node
 
 from robot_sim_gui.RobotSimCanvas import RobotSimCanvas
 from robot_sim_gui.msg import DrivePower, IRSensorData
-from robot_sim_gui.srv import LightStatus, LightStatusRequest, LightStatusResponse, ContinuationStatus, ContinuationStatusResponse
+from robot_sim_gui.srv import LightStatus, ContinuationStatus
 
 import math
 import random
@@ -16,7 +16,7 @@ import threading
 class RobotSimGui(Node):
     def __init__(self):
 
-        rospy.init_node(name='robot_sim_gui')
+        super().__init__('robot_sim_gui')
 
         # Set up canvas
         window = Tk()
@@ -27,42 +27,22 @@ class RobotSimGui(Node):
         window.wm_iconphoto(False, icon_tk_image)
 
         robotSimCanvas = RobotSimCanvas(window, window.winfo_screenwidth(), window.winfo_screenheight(), rospy.get_param('~resource_path'), robot_init_x=300, robot_init_y=500)
+        
+        #Setting up Publishers
         self.ir_publisher = self.create_publisher(IRSensorData, '/robot/ir_sensor', queue_size=1)
+        
+        #setting up subscribers
+        powerSubscriber = rospy.Subscriber(DrivePower, '/robot/drive_power', setRobotPower, queue_size=1)
+        
+        #Setting up service
+        self.light_service = self.create_service(LightStatus, '/robot/status_light', self.processLight)    
 
+        timer_period = 0.1 # seconds
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.i = 0
 
+    #First Timer
     def timer_callback(self):
-        rospy.Publisher()
-        pass
-    # Set drive power
-    def setRobotPower(msg: DrivePower):
-        if not robotSimCanvas.getReachedTarget():
-            robotSimCanvas.updateRobotSpeeds([msg.leftPower, msg.rightPower])
-        else:
-            robotSimCanvas.updateRobotSpeeds([0,0])
-    powerSubscriber = rospy.Subscriber('/robot/drive_power', DrivePower, setRobotPower, queue_size=1)
-
-
-    # Process placing/hitting targets
-    def placeTargetRandom():
-        robotSimCanvas.addTarget(random.randint(150,robotSimCanvas.canvas.winfo_width()-150), random.randint(150,robotSimCanvas.canvas.winfo_height()-150))
-
-    def processLight(msg: LightStatusRequest):
-        global canContinue
-        # print(f'HEAD MSG {msg.lightStatus}')
-        if msg.lightStatus: robotSimCanvas.status_light.setReachedTarget()
-        else:
-            canContinue = False
-            robotSimCanvas.status_light.setNavigatingToTarget()
-        return LightStatusResponse()
-    light_service = rospy.Service('/robot/status_light', LightStatus, processLight)    
-
-    canContinue = False
-    def processContinuation():
-        return ContinuationStatusResponse(canContinue=canContinue)
-    continuation_service = rospy.Service('/robot/continuation', ContinuationStatus, lambda _: processContinuation())
-
-    counter=0
-    def processTargets():
         global canContinue
         currTargetPos = deepcopy(robotSimCanvas.getTargetPos()) # copy-on-read to avoid race condition
         currRobotPos = robotSimCanvas.getRobotPos()
@@ -75,17 +55,51 @@ class RobotSimGui(Node):
             canContinue = False
             robotSimCanvas.removeTarget()
             placeTargetRandom()
-            def resetContinue():
-                global canContinue
-                global counter
-                canContinue = True
-                counter += 1
-                print('CONTINUING...')
-                print(f'COMPLETE WITH {counter} TARGETS')
-            timer = threading.Timer(3, resetContinue)
-            timer.setDaemon = True
-            timer.start()
 
+        timer_period = 3 # seconds
+        self.timer_inner = self.create_timer(timer_period, self.resetContinue)
+
+    #Second Timer
+    def resetContinue(self):
+        global canContinue
+        global counter
+        canContinue = True
+        counter += 1
+        print('CONTINUING...')
+        print(f'COMPLETE WITH {counter} TARGETS')
+
+    # Set drive power
+    def setRobotPower(self, msg: DrivePower):
+        if not robotSimCanvas.getReachedTarget():
+            robotSimCanvas.updateRobotSpeeds([msg.leftPower, msg.rightPower])
+        else:
+            robotSimCanvas.updateRobotSpeeds([0,0])
+
+
+    # Process placing/hitting targets
+    def placeTargetRandom():
+        robotSimCanvas.addTarget(random.randint(150,robotSimCanvas.canvas.winfo_width()-150), random.randint(150,robotSimCanvas.canvas.winfo_height()-150))
+
+    def processLight(self, request, response):
+        global canContinue
+        # print(f'HEAD MSG {msg.lightStatus}')
+        if request.lightStatus: robotSimCanvas.status_light.setReachedTarget()
+        else:
+            canContinue = False
+            robotSimCanvas.status_light.setNavigatingToTarget()
+        return response
+    
+
+    ### Have not changed from below here##_
+    #--------------------------------------------------------------------------------------#
+    canContinue = False
+    def processContinuation():
+        return ContinuationStatusResponse(canContinue=canContinue)
+    continuation_service = rospy.Service('/robot/continuation', ContinuationStatus, lambda _: processContinuation())
+
+    counter=0
+    def processTargets():
+        
     targetTimer = rospy.Timer(rospy.Duration(0.1), lambda _: processTargets())
     placeTargetRandom()
 
