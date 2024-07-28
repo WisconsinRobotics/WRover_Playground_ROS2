@@ -35,15 +35,21 @@ class RobotSimGui(Node):
         powerSubscriber = rospy.Subscriber(DrivePower, '/robot/drive_power', setRobotPower, queue_size=1)
         
         #Setting up service
-        self.light_service = self.create_service(LightStatus, '/robot/status_light', self.processLight)    
+        self.light_service = self.create_service(LightStatus, '/robot/status_light', self.processLight)  
+        self.continuation_service = self.create_service(ContinuationStatus, '/robot/continuation',  self.processContinuation)
+  
+
+        self.canContinue = False
+        self.counter = 0
 
         timer_period = 0.1 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
+        placeTargetRandom()
 
     #First Timer
     def timer_callback(self):
-        global canContinue
+        
         currTargetPos = deepcopy(robotSimCanvas.getTargetPos()) # copy-on-read to avoid race condition
         currRobotPos = robotSimCanvas.getRobotPos()
 
@@ -52,7 +58,7 @@ class RobotSimGui(Node):
         
         distToTarget = math.sqrt((currTargetPos[0] - currRobotPos[0]) ** 2 + (currTargetPos[1] - currRobotPos[1]) ** 2)
         if distToTarget < 100 and robotSimCanvas.getReachedTarget():
-            canContinue = False
+            self.canContinue = False
             robotSimCanvas.removeTarget()
             placeTargetRandom()
 
@@ -61,10 +67,8 @@ class RobotSimGui(Node):
 
     #Second Timer
     def resetContinue(self):
-        global canContinue
-        global counter
-        canContinue = True
-        counter += 1
+        self.canContinue = True
+        self.counter += 1
         print('CONTINUING...')
         print(f'COMPLETE WITH {counter} TARGETS')
 
@@ -81,27 +85,18 @@ class RobotSimGui(Node):
         robotSimCanvas.addTarget(random.randint(150,robotSimCanvas.canvas.winfo_width()-150), random.randint(150,robotSimCanvas.canvas.winfo_height()-150))
 
     def processLight(self, request, response):
-        global canContinue
         # print(f'HEAD MSG {msg.lightStatus}')
         if request.lightStatus: robotSimCanvas.status_light.setReachedTarget()
         else:
-            canContinue = False
+            self.canContinue = False
             robotSimCanvas.status_light.setNavigatingToTarget()
         return response
     
 
+    def processContinuation(self, response):
+        return response(response.canContinue=self.canContinue)
     ### Have not changed from below here##_
     #--------------------------------------------------------------------------------------#
-    canContinue = False
-    def processContinuation():
-        return ContinuationStatusResponse(canContinue=canContinue)
-    continuation_service = rospy.Service('/robot/continuation', ContinuationStatus, lambda _: processContinuation())
-
-    counter=0
-    def processTargets():
-        
-    targetTimer = rospy.Timer(rospy.Duration(0.1), lambda _: processTargets())
-    placeTargetRandom()
 
     # Publish sensing messages
     def publishIRMessage(publisher: rospy.Publisher):
