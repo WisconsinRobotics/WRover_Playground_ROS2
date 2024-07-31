@@ -14,8 +14,8 @@
 
 To test the playground, run
 ```
-ros2 topic pub /robot/drive_power robot_sim_interfaces/msg/DrivePower "left_power: -0.5
-right_power: -0.5"
+ros2 topic pub /robot/drive_power robot_sim_interfaces/msg/DrivePower "left_power: 0.5
+right_power: 0.5"
 ```
 
-The robot should begin driving backwards.
+The robot should begin driving forwards.

@@ -1,13 +1,10 @@
 import random
 import tkinter as tk
-import threading
 from typing import Optional, Tuple
 
-import rclpy
 
 from robot_sim_gui.robot import Robot
 from robot_sim_gui.status_light import StatusLight
-from robot_sim_gui.robot_sim_node import RobotSimNode
 
 
 class RobotSimCanvas(tk.Canvas):
@@ -20,42 +17,32 @@ class RobotSimCanvas(tk.Canvas):
         robot_init_y: int = 0,
         **kw
     ):
+        if kw.get('height', 0) == 0:
+            kw['height'] = root.winfo_screenheight()
+        if kw.get('width', 0) == 0:
+            kw['width'] = root.winfo_screenwidth()
+
         # Initialize canvas
         super().__init__(master=root, **kw)
 
-        self.pack()
         self.resource_path = resource_path
 
-        # Set up variables
+        # Set up target variables
         self.target_tk_image: Optional[tk.PhotoImage] = None
         self.target_img_id: Optional[int] = None
         self.target_x_pos: Optional[int] = None
         self.target_y_pos: Optional[int] = None
-        self.robot = None
-        self.status_light = None
 
-        # Initialize ROS node
-        self.ros_node = RobotSimNode(self)
+        self.pack()
 
         # Create robot
         self.robot = Robot(
             root, self, self.resource_path, init_x=robot_init_x, init_y=robot_init_y
         )
 
-        # Add status light
+        # # Add status light
         self.status_light = StatusLight(self)
 
-        ros_thread = threading.Thread(target=lambda: self._spin_ros_node())
-        ros_thread.start()
-
-    def _spin_ros_node(self):
-        rclpy.spin(self.ros_node)
-
-        # Destroy the node explicitly
-        # (optional - otherwise it will be done automatically
-        # when the garbage collector destroys the node object)
-        self.ros_node.destroy_node()
-        rclpy.shutdown()
 
     def add_target(self, x_pos: int = 0, y_pos: int = 0):
         """Add the target or move it to the specified position."""
@@ -85,7 +72,7 @@ class RobotSimCanvas(tk.Canvas):
     def random_target(self):
         """Place the target at a random position."""
         random_x = random.randint(150, self.winfo_width() - 150)
-        random_y = random.randint(150, self.winfo_height()-150)
+        random_y = random.randint(150, self.winfo_height() - 150)
         self.add_target(random_x, random_y)
 
     def remove_target(self):

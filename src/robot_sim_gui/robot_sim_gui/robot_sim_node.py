@@ -1,21 +1,18 @@
 import math
 import threading
 from copy import deepcopy
-from typing import TYPE_CHECKING
 
 from rclpy.node import Node
 
 from robot_sim_interfaces.msg import DrivePower, IRSensorData
 from robot_sim_interfaces.srv import ContinueStatus, ContinueStatus_Response, StatusLight, StatusLight_Request, StatusLight_Response
 
-# This prevents a circular import at runtime
-if TYPE_CHECKING:
-    from robot_sim_gui.robot_sim_canvas import RobotSimCanvas
+from robot_sim_gui.robot_sim_canvas import RobotSimCanvas
 
 
 class RobotSimNode(Node):
 
-    def __init__(self, robot_sim_canvas: 'RobotSimCanvas'):
+    def __init__(self, robot_sim_canvas: RobotSimCanvas):
         super().__init__('robot_sim_node')
 
         self.sim_canvas = robot_sim_canvas
