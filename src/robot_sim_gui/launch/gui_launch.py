@@ -8,8 +8,11 @@ from launch.substitutions import LaunchConfiguration, TextSubstitution
 
 from launch_ros.actions import Node
 
+
 def generate_launch_description():
-    resource_path = os.path.join(get_package_share_directory('robot_sim_gui'), 'images')
+    resource_path = os.path.join(
+        get_package_share_directory('robot_sim_gui'), 'images'
+    )
 
     resource_path_arg = DeclareLaunchArgument(
         'resource_path', default_value=TextSubstitution(text=resource_path),

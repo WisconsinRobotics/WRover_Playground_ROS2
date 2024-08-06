@@ -1,17 +1,19 @@
-from tkinter import *
-from PIL import Image, ImageTk
 import math
-
+import tkinter as tk
 from typing import Tuple
 
-UPDATE_PERIOD = 10  # in ms
+from PIL import Image, ImageTk
+
+# Frequency for updating the position of the robot (in ms)
+UPDATE_PERIOD = 10
 
 
 class Robot:
+    """Class for drawing the robot on the canvas."""
+
     def __init__(
-        self, root: Tk, canvas: Canvas, resource_path: str, init_x: int, init_y: int
+        self, canvas: tk.Canvas, resource_path: str, init_x: int, init_y: int
     ):
-        self.root = root
         self.canvas = canvas
         self.canvas.update()
         self.canvas_width = self.canvas.winfo_width()
@@ -28,10 +30,10 @@ class Robot:
         self.turn_speed = 0
 
         # Add robot image
-        self.image = Image.open(f"{self.__resource_path}/SmallTank.png")
+        self.image = Image.open(f'{self.__resource_path}/SmallTank.png')
         self.tk_image = ImageTk.PhotoImage(self.image.rotate(self.angle))
         self.img_id = self.canvas.create_image(
-            self.x_pos, self.y_pos, image=self.tk_image, anchor=NW
+            self.x_pos, self.y_pos, image=self.tk_image, anchor=tk.NW
         )
 
         # Get image dimensions
@@ -42,6 +44,7 @@ class Robot:
         self.update_pos()
 
     def update_pos(self):
+        """Loop for updating the position of the robot."""
         # Calculate robot x and y speeds
         x_speed = -self.forward_speed * math.sin(math.radians(self.angle))
         y_speed = -self.forward_speed * math.cos(math.radians(self.angle))
@@ -64,20 +67,20 @@ class Robot:
             self.canvas.delete(self.img_id)
             self.tk_image = ImageTk.PhotoImage(self.image.rotate(self.angle))
             self.img_id = self.canvas.create_image(
-                self.x_pos, self.y_pos, image=self.tk_image, anchor=NW
+                self.x_pos, self.y_pos, image=self.tk_image, anchor=tk.NW
             )
 
-        self.root.after(UPDATE_PERIOD, lambda: self.update_pos())
+        self.canvas.after(UPDATE_PERIOD, self.update_pos)
 
     def update_speeds(self, left_speed: float, right_speed: float):
-        """
-        Update left and right speed of robot.
-        """
+        """Update left and right speed of robot."""
         self.forward_speed = right_speed + left_speed
         self.turn_speed = 2 * (right_speed - left_speed)
 
     def get_pos(self) -> Tuple[int, int]:
+        """Return the position of the robot."""
         return (self.x_pos, self.y_pos)
 
     def get_orientation(self) -> float:
+        """Return the orientation of the robot."""
         return self.angle

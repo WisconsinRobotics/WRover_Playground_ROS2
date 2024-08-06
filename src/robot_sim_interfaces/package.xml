@@ -3,7 +3,7 @@
 <package format="3">
   <name>robot_sim_interfaces</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>ROS message and service defintions for WRoverPlayground</description>
   <maintainer email="colin@todo.todo">colin</maintainer>
   <license>MIT</license>
 

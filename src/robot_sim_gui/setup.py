@@ -16,7 +16,8 @@ setup(
         # Copy image files
         (os.path.join('share', package_name, 'images'), glob(os.path.join('images', '*.png'))),
         # Include all launch files.
-        (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*')))
+        (os.path.join('share', package_name, 'launch'),
+            glob(os.path.join('launch', '*launch.[pxy][yma]*')))
     ],
     install_requires=['setuptools'],
     zip_safe=True,

@@ -2,12 +2,12 @@ import random
 import tkinter as tk
 from typing import Optional, Tuple
 
-
 from robot_sim_gui.robot import Robot
 from robot_sim_gui.status_light import StatusLight
 
 
 class RobotSimCanvas(tk.Canvas):
+    """Tk Canvas object for drawing the WRoverPlayground GUI."""
 
     def __init__(
         self,
@@ -37,12 +37,11 @@ class RobotSimCanvas(tk.Canvas):
 
         # Create robot
         self.robot = Robot(
-            root, self, self.resource_path, init_x=robot_init_x, init_y=robot_init_y
+            self, self.resource_path, init_x=robot_init_x, init_y=robot_init_y
         )
 
         # # Add status light
         self.status_light = StatusLight(self)
-
 
     def add_target(self, x_pos: int = 0, y_pos: int = 0):
         """Add the target or move it to the specified position."""
@@ -83,5 +82,6 @@ class RobotSimCanvas(tk.Canvas):
             self.target_x_pos = None
             self.target_y_pos = None
 
-    def get_target_pos(self) -> Tuple[int, int]:
+    def get_target_pos(self) -> Tuple[Optional[int], Optional[int]]:
+        """Return the position of the target."""
         return (self.target_x_pos, self.target_y_pos)

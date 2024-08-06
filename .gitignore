@@ -3,6 +3,11 @@ build
 install
 log
 
+# documentation
+cross_reference
+docs_build
+docs_output
+
 # python env
 venv/
 

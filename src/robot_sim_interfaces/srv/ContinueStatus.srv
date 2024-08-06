@@ -1,2 +1,5 @@
+# This service has an empty request
 ---
+# The response sets can_continue to True if the rover can move to the next target,
+#   and False otherwise
 bool can_continue
