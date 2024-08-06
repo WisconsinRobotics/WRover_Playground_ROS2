@@ -1,0 +1,7 @@
+# Constants for status light values.
+int8 NOT_DONE = 0
+int8 DONE = 1
+# Request parameter to set the status light.
+int8 light_status
+---
+# This service has an empty response.
