@@ -1,133 +1,151 @@
 #!/usr/bin/env python3
-from tkinter import *
+import tkinter as tk
 
 import rclpy
 from rclpy.node import Node
 
+import threading
+
 from robot_sim_gui.RobotSimCanvas import RobotSimCanvas
-from robot_sim_gui.msg import DrivePower, IRSensorData
-from robot_sim_gui.srv import LightStatus, ContinuationStatus
+from custom_msgs_srvs.msg import DrivePower, IRSensorData
+from custom_msgs_srvs.srv import LightStatus, ContinuationStatus
 
 import math
 import random
+import os
 from copy import deepcopy
-import threading
 
 class RobotSimGui(Node):
     def __init__(self):
 
         super().__init__('robot_sim_gui')
 
-        # Set up canvas
-        window = Tk()
-        window.geometry(f'{window.winfo_screenwidth()}x{window.winfo_screenheight()}')
-
-        # Set window icon
-        icon_tk_image = PhotoImage(file=f'{rospy.get_param("~resource_path")}/WRIcon.png')
-        window.wm_iconphoto(False, icon_tk_image)
-
-        robotSimCanvas = RobotSimCanvas(window, window.winfo_screenwidth(), window.winfo_screenheight(), rospy.get_param('~resource_path'), robot_init_x=300, robot_init_y=500)
-        
+               
         #Setting up Publishers
-        self.ir_publisher = self.create_publisher(IRSensorData, '/robot/ir_sensor', queue_size=1)
-        
+        self.ir_publisher = self.create_publisher(IRSensorData, '/robot/ir_sensor', 1)
+
         #setting up subscribers
-        powerSubscriber = rospy.Subscriber(DrivePower, '/robot/drive_power', setRobotPower, queue_size=1)
+        self.powerSubscriber = self.create_subscription(DrivePower, '/robot/drive_power', self.setRobotPower, 1)
         
         #Setting up service
         self.light_service = self.create_service(LightStatus, '/robot/status_light', self.processLight)  
         self.continuation_service = self.create_service(ContinuationStatus, '/robot/continuation',  self.processContinuation)
-  
 
-        self.canContinue = False
+        self.start_tkinter()
+
+        self.can_continue = False
         self.counter = 0
-
         timer_period = 0.1 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.i = 0
-        placeTargetRandom()
+        
 
     #First Timer
     def timer_callback(self):
         
-        currTargetPos = deepcopy(robotSimCanvas.getTargetPos()) # copy-on-read to avoid race condition
-        currRobotPos = robotSimCanvas.getRobotPos()
+        currTargetPos = deepcopy(self.robotSimCanvas.getTargetPos()) # copy-on-read to avoid race condition
+        currRobotPos = self.robotSimCanvas.getRobotPos()
 
         if currTargetPos == [None, None]:
             return
         
         distToTarget = math.sqrt((currTargetPos[0] - currRobotPos[0]) ** 2 + (currTargetPos[1] - currRobotPos[1]) ** 2)
-        if distToTarget < 100 and robotSimCanvas.getReachedTarget():
-            self.canContinue = False
-            robotSimCanvas.removeTarget()
-            placeTargetRandom()
+        if distToTarget < 100 and self.robotSimCanvas.getReachedTarget():
+            self.can_continue = False
+            self.robotSimCanvas.removeTarget()
+            self.placeTargetRandom()
 
-        timer_period = 3 # seconds
-        self.timer_inner = self.create_timer(timer_period, self.resetContinue)
+
+            self.resetContinue()
+        self.publishIRMessage()
 
     #Second Timer
     def resetContinue(self):
-        self.canContinue = True
+        self.can_continue = True
         self.counter += 1
         print('CONTINUING...')
-        print(f'COMPLETE WITH {counter} TARGETS')
+        print(f'COMPLETE WITH {self.counter} TARGETS')
 
     # Set drive power
     def setRobotPower(self, msg: DrivePower):
-        if not robotSimCanvas.getReachedTarget():
-            robotSimCanvas.updateRobotSpeeds([msg.leftPower, msg.rightPower])
+        print("AAAAAAAAAAAAAAAAAAAA")
+        if not self.robotSimCanvas.getReachedTarget():
+            print("Subscriber called back")
+            self.robotSimCanvas.updateRobotSpeeds([msg.left_power, msg.right_power])
         else:
-            robotSimCanvas.updateRobotSpeeds([0,0])
+            self.robotSimCanvas.updateRobotSpeeds([0,0])
 
 
     # Process placing/hitting targets
-    def placeTargetRandom():
-        robotSimCanvas.addTarget(random.randint(150,robotSimCanvas.canvas.winfo_width()-150), random.randint(150,robotSimCanvas.canvas.winfo_height()-150))
+    def placeTargetRandom(self):
+        self.robotSimCanvas.addTarget(random.randint(150,self.robotSimCanvas.canvas.winfo_width()-150), random.randint(150,self.robotSimCanvas.canvas.winfo_height()-150))
 
     def processLight(self, request, response):
-        # print(f'HEAD MSG {msg.lightStatus}')
-        if request.lightStatus: robotSimCanvas.status_light.setReachedTarget()
+        # print(f'HEAD MSG {msg.light_status}')
+        if request.light_status: self.robotSimCanvas.status_light.setReachedTarget()
         else:
-            self.canContinue = False
-            robotSimCanvas.status_light.setNavigatingToTarget()
+            self.can_continue = False
+            self.robotSimCanvas.status_light.setNavigatingToTarget()
         return response
     
 
     def processContinuation(self, response):
-        return response(response.canContinue=self.canContinue)
-    ### Have not changed from below here##_
-    #--------------------------------------------------------------------------------------#
+        return response(canContinue=self.can_continue)
 
     # Publish sensing messages
-    def publishIRMessage(publisher: rospy.Publisher):
+    def publishIRMessage(self):
         startingMessage = [math.inf] * 180
-        currTargetPos = deepcopy(robotSimCanvas.getTargetPos()) # copy-on-read to avoid race condition
-        currRobotPos = robotSimCanvas.getRobotPos()
+        currTargetPos = deepcopy(self.robotSimCanvas.getTargetPos()) # copy-on-read to avoid race condition
+        currRobotPos = self.robotSimCanvas.getRobotPos()
 
         # If there's no target, publish empty message
         if None in currTargetPos:
-            publisher.publish(IRSensorData(distances=startingMessage))
+            self.ir_publisher.publish(IRSensorData(distances=startingMessage))
             return
 
         dY = currRobotPos[0] - currTargetPos[0]
         dX = currRobotPos[1] - currTargetPos[1]
         absAngle = math.degrees(math.atan2(dY, dX))
-        relAngle = (((absAngle - (robotSimCanvas.getRobotOrientation()))+ 540) % 360) - 180
+        relAngle = (((absAngle - (self.robotSimCanvas.getRobotOrientation()))+ 540) % 360) - 180
 
         # Get distance
         if abs(relAngle) < 90:
             ind = 90 - int(relAngle)
             startingMessage[ind] = math.sqrt((currTargetPos[0] - currRobotPos[0]) ** 2 + (currTargetPos[1] - currRobotPos[1]) ** 2)
         # Publish final message
-        publisher.publish(IRSensorData(distances=startingMessage))
-    irPublisher = rospy.Publisher('/robot/ir_sensor', IRSensorData, queue_size=1)
-    irTimer = rospy.Timer(rospy.Duration(0.1), lambda _: publishIRMessage(irPublisher))
+        self.ir_publisher.publish(IRSensorData(distances=startingMessage))
 
+    def start_tkinter(self):
+         # Set up canvas
+        self.window = tk.Tk()
+        
+        self.window.geometry(f'{self.window.winfo_screenwidth()}x{self.window.winfo_screenheight()}')
+        
+        resource_path = f'{os.getcwd()}/src/robot_sim_gui/resource/'
+        
+        self.robotSimCanvas = RobotSimCanvas(self.window, self.window.winfo_screenwidth(), self.window.winfo_screenheight(), resource_path, robot_init_x=300, robot_init_y=500)
+        self.placeTargetRandom()
+    
     # Stop Tk on ROS shutsdown
-    def stopTk():
-        window.quit()
-    rospy.on_shutdown(stopTk)
-    t1 = threading.Thread(target=lambda: rospy.spin())
+    def stopTk(self):
+        print("Endings")
+        self.window.quit()
+
+def main(args = None):
+    rclpy.init(args=args)
+
+    rover_gui = RobotSimGui()
+        # Start ROS2 spinning in the main thread
+    t1 = threading.Thread(target=lambda: rclpy.spin(rover_gui))
     t1.start()
 
-    window.mainloop()
+    rover_gui.window.mainloop()
+
+    rover_gui.destroy_node()
+    rover_gui.stopTk()
+    rclpy.shutdown()
+    
+    
+    
+
+if __name__ == '__main__':
+    main()

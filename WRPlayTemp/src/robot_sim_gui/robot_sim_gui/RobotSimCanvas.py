@@ -6,7 +6,7 @@ from robot_sim_gui.StatusLight import StatusLight
 from typing import Tuple
 
 class RobotSimCanvas:
-  def __init__(self, root:Tk, canvas_width:int, canvas_height:int, resource_path:str, robot_init_x:int = 0, robot_init_y:int = 0):
+  def __init__(self, root:Tk, canvas_width:int, canvas_height:int, resource_path:str, robot_init_x:int, robot_init_y:int):
     # Initialize canvas
     self.root = root
     self.canvas = Canvas(root, width=canvas_width, height=canvas_height)
@@ -34,7 +34,6 @@ class RobotSimCanvas:
     # Open image is it hasn't been yet
     if self.target_tk_image is None:
       self.target_tk_image = PhotoImage(file=f'{self.__resource_path}/TrafficCone.png')
-    
     # Generate new target position
     self.target_x_pos = x_pos
     self.target_y_pos = y_pos
@@ -42,10 +41,14 @@ class RobotSimCanvas:
     # Create the image if it isn't on canvas
     if self.target_img_id is None:
       self.target_img_id = self.canvas.create_image(self.target_x_pos, self.target_y_pos, image=self.target_tk_image, anchor=NW)
+      self.canvas.update()
+
     
     # Otherwise, just move
     else:
       self.canvas.moveto(self.target_img_id, self.target_x_pos, self.target_y_pos)
+      self.canvas.update()
+
 
   def removeTarget(self):
     # Remove target, if it exists

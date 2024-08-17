@@ -14,12 +14,13 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='balabalu',
-    maintainer_email='balabalu@todo.todo',
-    description='TODO: Package description',
+    maintainer_email='dittmargreav@wisc.edu',
+    description='Gui for robot simulation',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'gui = robot_sim_gui.gui:main',
         ],
     },
 )

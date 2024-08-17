@@ -3,10 +3,11 @@ from PIL import Image, ImageTk
 import math
 
 from typing import Tuple
+import threading
 
 UPDATE_PERIOD = 10 # in ms
 
-class Robot:
+class Robot():
   def __init__(self, root:Tk, canvas:Canvas, resource_path: str, init_x:int, init_y:int):
     self.root = root
     self.canvas = canvas
@@ -27,7 +28,10 @@ class Robot:
     # Add robot image
     self.image = Image.open(f'{self.__resource_path}/SmallTank.png')
     self.tk_image = ImageTk.PhotoImage(self.image.rotate(self.angle))
+
     self.img_id = self.canvas.create_image(self.x_pos, self.y_pos, image=self.tk_image, anchor=NW)
+
+    self.canvas.update()
 
     # Get image dimensions
     self.image_width = self.tk_image.width()
@@ -44,6 +48,9 @@ class Robot:
     # Don't update position if it would go outside the canvas
     new_x_pos = self.x_pos + x_speed
     new_y_pos = self.y_pos + y_speed
+
+    print("new x" + str(new_x_pos))
+    print("newy" + str(new_y_pos))
     if \
       new_x_pos + self.image_width < self.canvas_width and new_x_pos > 0 \
       and new_y_pos + self.image_height < self.canvas_height and new_y_pos > 0:
@@ -56,18 +63,19 @@ class Robot:
       self.canvas.delete(self.img_id)
       self.tk_image = ImageTk.PhotoImage(self.image.rotate(self.angle))
       self.img_id = self.canvas.create_image(self.x_pos, self.y_pos, image=self.tk_image, anchor=NW)
-
-    self.root.after(UPDATE_PERIOD, lambda: self.updatePos())
+    self.root.after(UPDATE_PERIOD, self.updatePos)
   
   def updateSpeeds(self, new_speeds: Tuple[float, float]):
     '''
-    Update left and right speed of robot.
+    Update left and right speed of robot.#
     new_speeds = (<left_speed>, <right_speed>)
     '''
+    print(new_speeds)
     left_speed, right_speed = new_speeds
     
     self.forward_speed = right_speed + left_speed
     self.turn_speed = 2*(right_speed - left_speed)
+    #self.updatePos()
 
   def getPos(self) -> Tuple[int,int]:
     return (self.x_pos, self.y_pos)

@@ -1,75 +1,56 @@
 from tkinter import *
-#from robot_sim_gui.Robot import Robot
-from robot_sim_gui.Robot import Robot
-from robot_sim_gui.StatusLight import StatusLight
+from tkinter import ttk
 
-from typing import Tuple
+FRAME_TOP_LEFT = (10, 10)
+FRAME_DIM = (160, 70)
 
-class RobotSimCanvas:
-  def __init__(self, root:Tk, canvas_width:int, canvas_height:int, resource_path:str, robot_init_x:int = 0, robot_init_y:int = 0):
-    # Initialize canvas
-    self.root = root
-    self.canvas = Canvas(root, width=canvas_width, height=canvas_height)
-    self.canvas.pack()
-    self.__resource_path = resource_path
+LIGHT_DIAM = 20
+LIGHT_DIMEN = (LIGHT_DIAM, LIGHT_DIAM)
 
-    # Create robot
-    self.robot = Robot(root, self.canvas, resource_path, init_x=robot_init_x, init_y=robot_init_y)
+class StatusLight:
+  def __init__(self, canvas:Canvas, reachedTargetInitVal:bool = False):
+    self.canvas = canvas
+    self.reachedTarget = reachedTargetInitVal
 
-    # Add target image
-    self.target_tk_image = None
-    self.target_img_id = None
+    # Create Style object to configure styles
+    s = ttk.Style()
 
-    # Add status light
-    self.status_light = StatusLight(self.canvas)
-
-  def updateRobotSpeeds(self, new_speeds: Tuple[float, float]):
-    '''
-    Update left and right speed of robot.
-    new_speeds = (<left_speed>, <right_speed>)
-    '''
-    self.robot.updateSpeeds(new_speeds)
-
-  def addTarget(self, x_pos=0, y_pos=0):
-    # Open image is it hasn't been yet
-    if self.target_tk_image is None:
-      self.target_tk_image = PhotoImage(file=f'{self.__resource_path}/TrafficCone.png')
+    # Create status light frame
+    s.configure('StatusFrame.TFrame', background='white', relief='solid')
+    self.frame = ttk.Frame(self.canvas, width=FRAME_DIM[0], height=FRAME_DIM[1], style='StatusFrame.TFrame')
+    self.frame['padding'] = 5
     
-    # Generate new target position
-    self.target_x_pos = x_pos
-    self.target_y_pos = y_pos
+    # Create status heading
+    s.configure('StatusLabel.TLabel', background='white', anchor=NW)
+    self.status_heading = ttk.Label(self.frame, text='Robot Status', font=('TkHeadingFont', 16), style='StatusLabel.TLabel')
 
-    # Create the image if it isn't on canvas
-    if self.target_img_id is None:
-      self.target_img_id = self.canvas.create_image(self.target_x_pos, self.target_y_pos, image=self.target_tk_image, anchor=NW)
-    
-    # Otherwise, just move
-    else:
-      self.canvas.moveto(self.target_img_id, self.target_x_pos, self.target_y_pos)
+    # Create status light
+    self.light_canvas = Canvas(self.frame, width=LIGHT_DIMEN[0] + 5, height=LIGHT_DIMEN[1] + 5, bg='white')
+    self.light_canvas.configure(highlightthickness=0, borderwidth=0)
+    self.status_light = self.light_canvas.create_oval(0, 0, *LIGHT_DIMEN, fill='red', outline='black')
 
-  def removeTarget(self):
-    # Remove target, if it exists
-    if self.target_img_id is not None:
-      self.canvas.delete(self.target_img_id)
-      self.target_img_id = None
-      self.target_x_pos = None
-      self.target_y_pos = None
-  
-  def getRobotPos(self) -> Tuple[int, int]:
-    return self.robot.getPos()
-  
-  def getRobotOrientation(self) -> float:
-    return self.robot.getOrientation()
+    # Create status message
+    self.status_msg = ttk.Label(self.frame, text='Navigating to target', style='StatusLabel.TLabel')
 
-  def getTargetPos(self) -> Tuple[int,int]:
-    return (self.target_x_pos, self.target_y_pos)
+    # Arrange status light contents within frame
+    self.status_heading.grid(column=0, row=0, columnspan=2, sticky=NW)
+    self.light_canvas.grid(column=0, row=1, sticky=NW)
+    self.status_msg.grid(column=1, row=1, sticky=NW)
+    self.frame.grid_columnconfigure(1, minsize=120)
+
+    # Add frame of status light to parent Canvas
+    self.canvas.create_window(*FRAME_TOP_LEFT, anchor=NW, window=self.frame)
 
   def setReachedTarget(self):
-    self.status_light.setReachedTarget()
+    self.light_canvas.itemconfig(self.status_light, fill='green')
+    self.status_msg['text'] = 'Reached target'
+    self.reachedTarget = True
   
   def setNavigatingToTarget(self):
-    self.status_light.setNavigatingToTarget()
+    self.light_canvas.itemconfig(self.status_light, fill='red')
+    self.status_msg['text'] = 'Navigating to target'
+    self.reachedTarget = False
   
-  def getReachedTarget(self):
-    return self.status_light.getReachedTarget()
+  def getReachedTarget(self) -> bool:
+    return self.reachedTarget
   
