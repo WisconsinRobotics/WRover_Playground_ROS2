@@ -49,8 +49,7 @@ class Robot():
     new_x_pos = self.x_pos + x_speed
     new_y_pos = self.y_pos + y_speed
 
-    print("new x" + str(new_x_pos))
-    print("newy" + str(new_y_pos))
+  
     if \
       new_x_pos + self.image_width < self.canvas_width and new_x_pos > 0 \
       and new_y_pos + self.image_height < self.canvas_height and new_y_pos > 0:
@@ -70,7 +69,6 @@ class Robot():
     Update left and right speed of robot.#
     new_speeds = (<left_speed>, <right_speed>)
     '''
-    print(new_speeds)
     left_speed, right_speed = new_speeds
     
     self.forward_speed = right_speed + left_speed

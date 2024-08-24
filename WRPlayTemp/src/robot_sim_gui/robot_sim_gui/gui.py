@@ -30,6 +30,7 @@ class RobotSimGui(Node):
         #Setting up service
         self.light_service = self.create_service(LightStatus, '/robot/status_light', self.processLight)  
         self.continuation_service = self.create_service(ContinuationStatus, '/robot/continuation',  self.processContinuation)
+        self.resp = ContinuationStatus.Response()
 
         self.start_tkinter()
 
@@ -50,6 +51,7 @@ class RobotSimGui(Node):
         
         distToTarget = math.sqrt((currTargetPos[0] - currRobotPos[0]) ** 2 + (currTargetPos[1] - currRobotPos[1]) ** 2)
         if distToTarget < 100 and self.robotSimCanvas.getReachedTarget():
+            print("PLACING NEW TARGET")
             self.can_continue = False
             self.robotSimCanvas.removeTarget()
             self.placeTargetRandom()
@@ -67,9 +69,7 @@ class RobotSimGui(Node):
 
     # Set drive power
     def setRobotPower(self, msg: DrivePower):
-        print("AAAAAAAAAAAAAAAAAAAA")
         if not self.robotSimCanvas.getReachedTarget():
-            print("Subscriber called back")
             self.robotSimCanvas.updateRobotSpeeds([msg.left_power, msg.right_power])
         else:
             self.robotSimCanvas.updateRobotSpeeds([0,0])
@@ -80,16 +80,18 @@ class RobotSimGui(Node):
         self.robotSimCanvas.addTarget(random.randint(150,self.robotSimCanvas.canvas.winfo_width()-150), random.randint(150,self.robotSimCanvas.canvas.winfo_height()-150))
 
     def processLight(self, request, response):
-        # print(f'HEAD MSG {msg.light_status}')
-        if request.light_status: self.robotSimCanvas.status_light.setReachedTarget()
+        #print(f'HEAD MSG {request.light_status}')
+        if request.light_status == 0: 
+            self.robotSimCanvas.status_light.setReachedTarget()
         else:
             self.can_continue = False
             self.robotSimCanvas.status_light.setNavigatingToTarget()
         return response
     
 
-    def processContinuation(self, response):
-        return response(canContinue=self.can_continue)
+    def processContinuation(self, request, response):
+        response.can_continue = self.can_continue
+        return response
 
     # Publish sensing messages
     def publishIRMessage(self):
