@@ -66,6 +66,8 @@ class RobotSimGui(Node):
         self.counter += 1
         print('CONTINUING...')
         print(f'COMPLETE WITH {self.counter} TARGETS')
+        self.get_logger().info('CONTINUING...')
+        self.get_logger().info(f'COMPLETE WITH {self.counter} TARGETS')
 
     # Set drive power
     def setRobotPower(self, msg: DrivePower):
