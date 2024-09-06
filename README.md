@@ -1,10 +1,14 @@
 # WRover_Playground_ROS2
 
  Let’s first get the simulation running. Here are the steps:
-Open a new terminal and navigate to WRPlayTemp
-run “colcon build”
-Open a new terminal and source your workspace with “source install/local_setup.bash”
-Now you can run “ros2 run robot_sim_gui gui” to run the gui.py file that should start the simulation. If the robot and beacon show up without moving then it is correct.
+ 
+- Open a new terminal and navigate to WRPlayTemp
+
+- run “colcon build”
+  
+- Open a new terminal and source your workspace with “source install/local_setup.bash”
+  
+- Now you can run “ros2 run robot_sim_gui gui” to run the gui.py file that should start the simulation. If the robot and beacon show up without moving then it is correct.
 
 TASK 1:
 
@@ -21,4 +25,4 @@ TASK 4: (Extra)
 
 
 FOR HELP:
-	Always refer to these tutorials ( https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-L ibraries.html) as well as the internet, software members, and leads. (Other code in the project can also be helpful).
+	Always refer to these tutorials ( https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries.html) as well as the internet, software members, and leads. (Other code in the project can also be helpful).
