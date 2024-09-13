@@ -39,25 +39,39 @@ class RobotSimGui(Node):
         timer_period = 0.1 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         
+    def wait_before_next_target(self, duration):
+        self.timer.cancel()  # Stop the main timer during the wait
+        self.get_logger().info(f"Waiting for {duration} seconds before placing being able to continue.")
+        self.wait_timer = self.create_timer(duration, self.wait_callback)
 
-    #First Timer
-    def timer_callback(self):
+    def wait_callback(self):
+        #self.get_logger().info("Wait period finished. Placing new target.")
+        self.wait_timer.cancel()  # Cancel the wait timer
         
+ 
+        self.resetContinue()
+        
+        self.timer.reset()  # Restart the main timer
+    
+    #Main Timer`
+    def timer_callback(self):
         currTargetPos = deepcopy(self.robotSimCanvas.getTargetPos()) # copy-on-read to avoid race condition
         currRobotPos = self.robotSimCanvas.getRobotPos()
 
         if currTargetPos == [None, None]:
             return
         
+
         distToTarget = math.sqrt((currTargetPos[0] - currRobotPos[0]) ** 2 + (currTargetPos[1] - currRobotPos[1]) ** 2)
         if distToTarget < 100 and self.robotSimCanvas.getReachedTarget():
-            print("PLACING NEW TARGET")
+           
             self.can_continue = False
+#           Move target but wait 3 seconds           
             self.robotSimCanvas.removeTarget()
             self.placeTargetRandom()
+            self.wait_before_next_target(3.0)  # 3 seconds wait            
 
 
-            self.resetContinue()
         self.publishIRMessage()
 
     #Second Timer
