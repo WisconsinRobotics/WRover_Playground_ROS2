@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from custom_msgs_srvs/srv/ContinuationStatus.srv
+// generated code does not contain a copyright notice
+
+
+module custom_msgs_srvs {
+  module srv {
+    struct ContinuationStatus_Request {
+      boolean nada;
+    };
+    struct ContinuationStatus_Response {
+      boolean can_continue;
+    };
+  };
+};

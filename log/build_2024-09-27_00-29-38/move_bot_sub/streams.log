@@ -1,0 +1,38 @@
+[1.030s] Invoking command in '/workspace/WRPlay/src/move_bot_sub': AMENT_PREFIX_PATH=/workspace/install/custom_msgs_srvs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/install/custom_msgs_srvs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/workspace/install/custom_msgs_srvs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/build/move_bot_sub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/move_bot_sub/lib/python3.12/site-packages:/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/move_bot_sub build --build-base /workspace/build/move_bot_sub/build install --record /workspace/build/move_bot_sub/install.log --single-version-externally-managed install_data
+[1.282s] running egg_info
+[1.282s] creating ../../../build/move_bot_sub/move_bot_sub.egg-info
+[1.297s] writing ../../../build/move_bot_sub/move_bot_sub.egg-info/PKG-INFO
+[1.297s] writing dependency_links to ../../../build/move_bot_sub/move_bot_sub.egg-info/dependency_links.txt
+[1.297s] writing entry points to ../../../build/move_bot_sub/move_bot_sub.egg-info/entry_points.txt
+[1.297s] writing requirements to ../../../build/move_bot_sub/move_bot_sub.egg-info/requires.txt
+[1.297s] writing top-level names to ../../../build/move_bot_sub/move_bot_sub.egg-info/top_level.txt
+[1.297s] writing manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'
+[1.328s] reading manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'
+[1.328s] adding license file 'LICENSE'
+[1.329s] writing manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'
+[1.329s] running build
+[1.329s] running build_py
+[1.329s] creating /workspace/build/move_bot_sub/build
+[1.329s] creating /workspace/build/move_bot_sub/build/lib
+[1.329s] creating /workspace/build/move_bot_sub/build/lib/move_bot_sub
+[1.329s] copying move_bot_sub/__init__.py -> /workspace/build/move_bot_sub/build/lib/move_bot_sub
+[1.329s] copying move_bot_sub/publisher_member_function.py -> /workspace/build/move_bot_sub/build/lib/move_bot_sub
+[1.330s] running install
+[1.337s] running install_lib
+[1.353s] creating /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub
+[1.353s] copying /workspace/build/move_bot_sub/build/lib/move_bot_sub/__init__.py -> /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub
+[1.353s] copying /workspace/build/move_bot_sub/build/lib/move_bot_sub/publisher_member_function.py -> /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub
+[1.353s] byte-compiling /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub/__init__.py to __init__.cpython-312.pyc
+[1.354s] byte-compiling /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub/publisher_member_function.py to publisher_member_function.cpython-312.pyc
+[1.354s] running install_data
+[1.354s] creating /workspace/install/move_bot_sub/share/ament_index
+[1.354s] creating /workspace/install/move_bot_sub/share/ament_index/resource_index
+[1.354s] creating /workspace/install/move_bot_sub/share/ament_index/resource_index/packages
+[1.355s] copying resource/move_bot_sub -> /workspace/install/move_bot_sub/share/ament_index/resource_index/packages
+[1.355s] copying package.xml -> /workspace/install/move_bot_sub/share/move_bot_sub
+[1.355s] running install_egg_info
+[1.371s] Copying ../../../build/move_bot_sub/move_bot_sub.egg-info to /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub-0.0.0-py3.12.egg-info
+[1.371s] running install_scripts
+[1.483s] Installing talker script to /workspace/install/move_bot_sub/lib/move_bot_sub
+[1.483s] writing list of installed files to '/workspace/build/move_bot_sub/install.log'
+[1.510s] Invoked command in '/workspace/WRPlay/src/move_bot_sub' returned '0': AMENT_PREFIX_PATH=/workspace/install/custom_msgs_srvs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/install/custom_msgs_srvs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/workspace/install/custom_msgs_srvs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/build/move_bot_sub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/move_bot_sub/lib/python3.12/site-packages:/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/move_bot_sub build --build-base /workspace/build/move_bot_sub/build install --record /workspace/build/move_bot_sub/install.log --single-version-externally-managed install_data

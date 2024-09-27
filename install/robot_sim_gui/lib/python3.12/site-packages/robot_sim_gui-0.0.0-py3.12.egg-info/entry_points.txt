@@ -1,0 +1,2 @@
+[console_scripts]
+gui = robot_sim_gui.gui:main

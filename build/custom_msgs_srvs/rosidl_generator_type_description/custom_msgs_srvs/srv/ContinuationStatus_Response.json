@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "custom_msgs_srvs/srv/ContinuationStatus_Response",
+      "fields": [
+        {
+          "name": "can_continue",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "custom_msgs_srvs/srv/ContinuationStatus_Response",
+      "hash_string": "RIHS01_d7fb758c5809e497bbb86135c331f6cdd26a97e233d93c6a3268d7bf2b05170b"
+    }
+  ]
+}
