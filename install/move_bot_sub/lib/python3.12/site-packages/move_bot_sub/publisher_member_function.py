@@ -14,8 +14,10 @@
 
 import rclpy
 from rclpy.node import Node
+import math
 
 from custom_msgs_srvs.msg import DrivePower
+from custom_msgs_srvs.msg import IRSensorData
 
 
 class MinimalPublisher(Node):
@@ -23,22 +25,44 @@ class MinimalPublisher(Node):
     def __init__(self):
         super().__init__('minimal_publisher')
         self.publisher_ = self.create_publisher(DrivePower, '/robot/drive_power', 10)
-        timer_period = 0.5  # seconds
+        timer_period = 0.01  # seconds
+        self.power_left = 0
+        self.power_right = 0
+        self.ir_array = [math.inf for _ in range(180)] 
+
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
+        self.subscription = self.create_subscription(
+            IRSensorData,
+            '/robot/ir_sensor',
+            self.listener_callback,
+            10)
+        
+        self.subscription  # prevent unused variable warning
+
+        # pause Until first callbac
+        # Rotate until inline with beacon
+        while (self.ir_array[90] == math.inf):
+            self.power_left = -.01
+            self.power_right = .01
+        self.power_left = 0
+        self.power_right = 0
+
+
 
     def timer_callback(self):
         msg = DrivePower()
-        msg.left_power = 10.0
-        msg.right_power = 10.0 #'{left_power: , right_power: 10}'
+        msg.left_power = self.power_left # 1.0
+        msg.right_power = self.power_right # 1.0 #'{left_power: , right_power: 10}'
 
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg)
+        #self.get_logger().info('Publishing: "%s"' % msg)
         self.i += 1
 
     def listener_callback(self, msg):
-        self.get_logger().info('I heard: "%s"' % msg.data)
-        
+        self.get_logger().info('I heard: "%s"' % msg.distances)
+        self.ir_array = msg.distances
+
 
 
 

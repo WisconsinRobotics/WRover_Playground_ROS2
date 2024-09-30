@@ -4,3 +4,9 @@ custom_msgs_srvs.egg-info/PKG-INFO
 custom_msgs_srvs.egg-info/SOURCES.txt
 custom_msgs_srvs.egg-info/dependency_links.txt
 custom_msgs_srvs.egg-info/top_level.txt
+custom_msgs_srvs/msg/__init__.py
+custom_msgs_srvs/msg/_drive_power.py
+custom_msgs_srvs/msg/_ir_sensor_data.py
+custom_msgs_srvs/srv/__init__.py
+custom_msgs_srvs/srv/_continuation_status.py
+custom_msgs_srvs/srv/_light_status.py
