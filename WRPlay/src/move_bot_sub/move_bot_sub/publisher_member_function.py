@@ -30,12 +30,13 @@ class Controller(Node):
         self.power_left = 0.0
         self.power_right = 0.0
         timer_period = 0.01  # seconds
-        
     
         super().__init__('minimal_publisher')
+
         self.drive_publisher = self.create_publisher(DrivePower, '/robot/drive_power', 10)
         self.drive_timer = self.create_timer(timer_period, self.drive_callback)
 
+        self.create_subscription(IRSensorData,'/robot/ir_sensor', self.beacon_callback,10)
 
         self.status_cli = self.create_client(LightStatus, '/robot/status_light')
         while not self.status_cli.wait_for_service(timeout_sec=1.0):
@@ -44,47 +45,29 @@ class Controller(Node):
         self.continue_client = self.create_client(ContinuationStatus, '/robot/continuation')
         while not self.continue_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('ContinuationStatus service not available, waiting again...')
-        self.continue_timer = self.create_timer(1.0, self.pull_continuation)
-
-        self.create_subscription(
-            IRSensorData,
-            '/robot/ir_sensor',
-            self.beacon_callback,
-            10)
-        
-        
-    def send_light_request(self, status):
-        req = LightStatus.Request()
-        req.light_status = status
-        self.future = self.status_cli.call_async(req)
-        #rclpy.spin_until_future_complete(self, self.future)
-
-
-    def pull_continuation(self):
-        req = ContinuationStatus.Request()
-        future = self.continue_client.call_async(req)
-        
-        def handle_response(future):
-            if future.result().can_continue:
-                self.send_light_request(1)
-
-        future.add_done_callback(handle_response)
+        self.continue_timer = self.create_timer(1.0, self.continuation_server_pull)
 
 
     def drive_callback(self):
+        """ Triggered periodically by a timer to publishing the drive power (self.power_left/right) of the bot. """
         msg = DrivePower()
         msg.left_power = self.power_left
         msg.right_power = self.power_right
         self.drive_publisher.publish(msg)
 
+
     def beacon_callback(self, msg):
+        """ Triggered when beacon updates. Will set drive power based on distance/angle to beacon. 
+            Stops bot when gets within 50 units of beacon.
+            - message: IR distances from /robot/ir_sensor topic.
+        """
         self.ir_array = msg.distances
 
         # Stop if within beacon distance
         if any(distance < 50 for distance in self.ir_array): 
             self.power_left = 0.0
             self.power_right = 0.0
-            self.send_light_request(0)
+            self.status_server_push(0)
         # Spin when no beacon signals are picked up
         elif all(distance == math.inf for distance in self.ir_array):
             self.power_left = -3.0
@@ -95,14 +78,38 @@ class Controller(Node):
             MAX_SPEED = 5.0
             MIN_SPEED = -5.0
             beacon_index = next(index for index, value in enumerate(self.ir_array) if value != math.inf)
-            self.power_left = MAX_SPEED if beacon_index > 90 else self.scale_value(beacon_index, 0, 90, MIN_SPEED, MAX_SPEED)
-            self.power_right = MAX_SPEED if beacon_index < 90 else self.scale_value(beacon_index, 90, 180, MAX_SPEED, MIN_SPEED)
+            
+            def scale_value(x, a, b, c, d):
+                """ If x is on a to b scale, map it to a number on c to d scale evenly. """
+                return float ( (x - a) * (d - c) / (b - c) + c )
+            
+            self.power_left = MAX_SPEED if beacon_index > 90 else scale_value(beacon_index, 0, 90, MIN_SPEED, MAX_SPEED)
+            self.power_right = MAX_SPEED if beacon_index < 90 else scale_value(beacon_index, 90, 180, MAX_SPEED, MIN_SPEED)
 
-    def scale_value(self, x, a, b, c, d):
+
+    def status_server_push(self, status: int):
+        """ Sends status message to Light Status Server
+            - status: 1 if rover is NOT DONE traveling to beacon. 0 if rover is DONE.
         """
-        If x is on a to b scale, map it to a number on c to d scale evenly
+        req = LightStatus.Request()
+        req.light_status = status
+        self.future = self.status_cli.call_async(req)
+
+
+    def continuation_server_pull(self):
+        """ Triggered periodically by timer to pull the status from the Continuation Server.
+            If the bot has reached the beacon and the light status is set to DONE, this 
+            will pull True and the light status will be set back to NOT DONE.
         """
-        return float ( (x - a) * (d - c) / (b - c) + c )
+
+        req = ContinuationStatus.Request()
+        future = self.continue_client.call_async(req)
+        
+        def handle_response(future):
+            if future.result().can_continue:
+                self.status_server_push(1)
+
+        future.add_done_callback(handle_response)
 
 
 
