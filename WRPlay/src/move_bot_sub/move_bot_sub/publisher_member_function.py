@@ -18,59 +18,86 @@ import math
 
 from custom_msgs_srvs.msg import DrivePower
 from custom_msgs_srvs.msg import IRSensorData
+from custom_msgs_srvs.srv import ContinuationStatus
+from custom_msgs_srvs.srv import LightStatus
 
 
-class MinimalPublisher(Node):
+class Controller(Node):
 
     def __init__(self):
-        super().__init__('minimal_publisher')
-        self.publisher_ = self.create_publisher(DrivePower, '/robot/drive_power', 10)
-        timer_period = 0.01  # seconds
-
-        # Start spinning (stopped by first callback)
+        
+        self.ir_array = [math.inf for _ in range(180)] 
         self.power_left = 0.0
         self.power_right = 0.0
+        self.continue_move = True
+        timer_period = 0.01  # seconds
+        
+    
+        super().__init__('minimal_publisher')
+        self.drive_publisher = self.create_publisher(DrivePower, '/robot/drive_power', 10)
+        self.timer = self.create_timer(timer_period, self.drive_callback)
 
-        self.ir_array = [math.inf for _ in range(180)] 
 
-        self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.i = 0
-        self.subscription = self.create_subscription(
+        self.status_cli = self.create_client(LightStatus, '/robot/status_light')
+        while not self.status_cli.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('LightStatus service not available, waiting again...')
+        
+        self.continue_client = self.create_client(ContinuationStatus, '/robot/continuation')
+        while not self.continue_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('ContinuationStatus service not available, waiting again...')
+        self.timer = self.create_timer(1.0, self.pull_continuation)
+
+        self.create_subscription(
             IRSensorData,
             '/robot/ir_sensor',
-            self.listener_callback,
+            self.beacon_callback,
             10)
         
-        self.subscription  # prevent unused variable warning
+        
+    def send_light_request(self):
+        req = LightStatus.Request()
+        req.light_status = 0
+        self.future = self.status_cli.call_async(req)
+        #rclpy.spin_until_future_complete(self, self.future)
 
 
+    def pull_continuation(self):
+        req = ContinuationStatus.Request()
+        future = self.continue_client.call_async(req)
+        
+        def handle_response(future):
+            # Find next beacon when notified
+            if future.result().can_continue:
+                self.continue_move = True
+
+        future.add_done_callback(handle_response)
 
 
-    def timer_callback(self):
+    def drive_callback(self):
         msg = DrivePower()
         msg.left_power = self.power_left # 1.0
         msg.right_power = self.power_right # 1.0 #'{left_power: , right_power: 10}'
 
-        self.publisher_.publish(msg)
+        self.drive_publisher.publish(msg)
         #self.get_logger().info('Publishing: "%s"' % msg)
-        self.i += 1
 
-    def listener_callback(self, msg):
+    def beacon_callback(self, msg):
         self.get_logger().info('I heard: "%s"' % msg.distances)
         self.ir_array = msg.distances
 
-        if (self.ir_array[90] == math.inf): # Spin until facing beacon
+        if (not self.continue_move or any(distance < 100 for distance in self.ir_array)): # Stop when near beacon
+            self.power_left = 0.0
+            self.power_right = 0.0
+            self.continue_move = False
+            self.get_logger().info("HERE")
+            self.send_light_request()
+
+        elif (self.ir_array[90] == math.inf): # Spin until facing beacon
             self.power_left = -.1
             self.power_right = .1
         else: # Drive straight while facing beacon
             self.power_left = 1.0
             self.power_right = 1.0
-
-        if (self.ir_array[90] == 0): # Stop when at beacon
-            self.power_left = 0.0
-            self.power_right = 0.0
-        
-
 
 
 
@@ -78,14 +105,14 @@ class MinimalPublisher(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    minimal_publisher = MinimalPublisher()
+    controller = Controller()
 
-    rclpy.spin(minimal_publisher)
+    rclpy.spin(controller)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    minimal_publisher.destroy_node()
+    controller.destroy_node()
     rclpy.shutdown()
 
 

@@ -61,6 +61,48 @@ ros2 run move_bot_sub talker  # Yaya this started
 ## TASK 3:
 	In the real world, we need the robot to notify us that it has reached the target. You are going to use services to accomplish this task. There are two services already set up in gui.py. LightStatus and ContinuationStatus. You need to first make a client to the LightStatus service to say that you are DONE when you are within 100 units of the beacon. Then, you will continuously poll the ContinuationsStatus service until the canComplete message is True. Once then, you can continue to the next beacon. It is highly recommended to check gui.py to see how the services work so you can implement the clients correctly. Your goal is for the robot to keep going and arriving at targets until you close the program. 
 
+	First I looked to see what topics and messages were available to publish to while the gui was running:
+```bash
+# See what topics are running
+$ ros2 service list
+/robot/continuation
+/robot/status_light
+/robot_sim_gui/describe_parameters
+/robot_sim_gui/get_parameter_types
+/robot_sim_gui/get_parameters
+/robot_sim_gui/get_type_description
+/robot_sim_gui/list_parameters
+/robot_sim_gui/set_parameters
+/robot_sim_gui/set_parameters_atomically
+
+# Check messages for continuation and  status_light
+$ ros2 service info  /robot/continuation
+Type: custom_msgs_srvs/srv/ContinuationStatus
+Clients count: 0
+Services count: 1
+
+$ ros2 service info  /robot/status_light
+Type: custom_msgs_srvs/srv/LightStatus
+Clients count: 0
+
+
+
+# Check message format :
+
+$ ros2 interface show custom_msgs_srvs/srv/ContinuationStatus
+bool nada
+---
+bool can_continue
+
+
+$ ros2 interface show custom_msgs_srvs/srv/LightStatus
+int8 DONE = 0
+int8 NOT_DONE = 1
+int8 light_status
+
+```
+
+
 ## TASK 4: (Extra)
 	Use PID controls to arrive at the target more effectively. You can also try to implement turning PID but that might be a little overkill.
 
