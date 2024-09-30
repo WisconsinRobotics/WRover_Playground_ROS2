@@ -30,12 +30,13 @@ class Controller(Node):
         self.power_left = 0.0
         self.power_right = 0.0
         self.continue_move = True
+        self.stopped = False
         timer_period = 0.01  # seconds
         
     
         super().__init__('minimal_publisher')
         self.drive_publisher = self.create_publisher(DrivePower, '/robot/drive_power', 10)
-        self.timer = self.create_timer(timer_period, self.drive_callback)
+        self.drive_timer = self.create_timer(timer_period, self.drive_callback)
 
 
         self.status_cli = self.create_client(LightStatus, '/robot/status_light')
@@ -45,7 +46,7 @@ class Controller(Node):
         self.continue_client = self.create_client(ContinuationStatus, '/robot/continuation')
         while not self.continue_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('ContinuationStatus service not available, waiting again...')
-        self.timer = self.create_timer(1.0, self.pull_continuation)
+        self.continue_timer = self.create_timer(1.0, self.pull_continuation)
 
         self.create_subscription(
             IRSensorData,
@@ -67,8 +68,9 @@ class Controller(Node):
         
         def handle_response(future):
             # Find next beacon when notified
-            if future.result().can_continue:
-                self.continue_move = True
+            # if future.result().can_continue:
+                #self.get_logger().info('Continuation: "%s"' % future.result())
+            self.continue_move = future.result().can_continue
 
         future.add_done_callback(handle_response)
 
@@ -79,26 +81,39 @@ class Controller(Node):
         msg.right_power = self.power_right # 1.0 #'{left_power: , right_power: 10}'
 
         self.drive_publisher.publish(msg)
-        #self.get_logger().info('Publishing: "%s"' % msg)
 
     def beacon_callback(self, msg):
-        self.get_logger().info('I heard: "%s"' % msg.distances)
+        #self.get_logger().info('I heard: "%s"' % msg.distances)
         self.ir_array = msg.distances
 
-        if (not self.continue_move or any(distance < 100 for distance in self.ir_array)): # Stop when near beacon
+        # Stop when arrive at beacon
+        if any(distance < 100 for distance in self.ir_array): 
             self.power_left = 0.0
             self.power_right = 0.0
-            self.continue_move = False
-            self.get_logger().info("HERE")
+            self.stopped = True
+            self.get_logger().info("HERE2")
             self.send_light_request()
+        # Spin when no beacon signals are picked up
+        elif all(distance == math.inf for distance in self.ir_array):
+            self.get_logger().info("HERE3")
+            self.power_left = -5.0
+            self.power_right = 5.0
 
-        elif (self.ir_array[90] == math.inf): # Spin until facing beacon
-            self.power_left = -.1
-            self.power_right = .1
-        else: # Drive straight while facing beacon
-            self.power_left = 1.0
-            self.power_right = 1.0
+        # Drive to beacon when have signal
+        else: 
+            self.get_logger().info("HERE4")
+            beacon_index = next(index for index, value in enumerate(self.ir_array) if value != math.inf)
+            MAX_SPEED = 10.0
+            MIN_SPEED = -10.0
+            
+            self.power_left = MAX_SPEED if beacon_index > 90 else self.scale_value(beacon_index, 0, 90, MIN_SPEED, MAX_SPEED)
+            self.power_right = MAX_SPEED if beacon_index < 90 else self.scale_value(beacon_index, 90, 180, MAX_SPEED, MIN_SPEED)
 
+    def scale_value(self, x, a, b, c, d):
+        """
+        If x is on a to b scale, map it to a number on c to d scale evenly
+        """
+        return float ( (x - a) * (d - c) / (b - c) + c )
 
 
 
