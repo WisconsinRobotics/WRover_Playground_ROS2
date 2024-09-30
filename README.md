@@ -58,6 +58,8 @@ ros2 run move_bot_sub talker  # Yaya this started
 ## TASK 2: 
 	There is a topic that gives you sensor data for the rover called “/robot/ir_sensor.” This works like an Infrared Sensor that provides a list with 180 data points going from 9 o’ clock to 3 o’clock going clockwise. Subscribe to this data to drive towards the beacon. Your goal is to reach the target.
 
+I modified code and kept on using `ros2 run move_bot_sub talker`.
+
 ## TASK 3:
 	In the real world, we need the robot to notify us that it has reached the target. You are going to use services to accomplish this task. There are two services already set up in gui.py. LightStatus and ContinuationStatus. You need to first make a client to the LightStatus service to say that you are DONE when you are within 100 units of the beacon. Then, you will continuously poll the ContinuationsStatus service until the canComplete message is True. Once then, you can continue to the next beacon. It is highly recommended to check gui.py to see how the services work so you can implement the clients correctly. Your goal is for the robot to keep going and arriving at targets until you close the program. 
 
@@ -101,10 +103,12 @@ int8 NOT_DONE = 1
 int8 light_status
 
 ```
-
+I modified code and kept on using `ros2 run move_bot_sub talker`.
 
 ## TASK 4: (Extra)
 	Use PID controls to arrive at the target more effectively. You can also try to implement turning PID but that might be a little overkill.
+
+I modified code to use P and kept on using `ros2 run move_bot_sub talker`.
 
 
 FOR HELP:

@@ -81,14 +81,14 @@ class Controller(Node):
         self.ir_array = msg.distances
 
         # Stop if within beacon distance
-        if any(distance < 100 for distance in self.ir_array): 
+        if any(distance < 50 for distance in self.ir_array): 
             self.power_left = 0.0
             self.power_right = 0.0
             self.send_light_request(0)
         # Spin when no beacon signals are picked up
         elif all(distance == math.inf for distance in self.ir_array):
-            self.power_left = -5.0
-            self.power_right = 5.0
+            self.power_left = -3.0
+            self.power_right = 3.0
 
         # Drive to beacon when have signal
         else: 
