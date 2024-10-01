@@ -1,0 +1,22 @@
+[0.650s] Invoking command in '/workspace/WRPlay/src/wrover_mock': PYTHONPATH=/workspace/build/WRover_Mock/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/WRover_Mock/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/WRover_Mock build --build-base /workspace/build/WRover_Mock/build install --record /workspace/build/WRover_Mock/install.log --single-version-externally-managed install_data
+[0.901s] running egg_info
+[0.916s] writing ../../../build/WRover_Mock/WRover_Mock.egg-info/PKG-INFO
+[0.917s] writing dependency_links to ../../../build/WRover_Mock/WRover_Mock.egg-info/dependency_links.txt
+[0.917s] writing entry points to ../../../build/WRover_Mock/WRover_Mock.egg-info/entry_points.txt
+[0.917s] writing requirements to ../../../build/WRover_Mock/WRover_Mock.egg-info/requires.txt
+[0.917s] writing top-level names to ../../../build/WRover_Mock/WRover_Mock.egg-info/top_level.txt
+[0.949s] reading manifest file '../../../build/WRover_Mock/WRover_Mock.egg-info/SOURCES.txt'
+[0.949s] adding license file 'LICENSE'
+[0.949s] writing manifest file '../../../build/WRover_Mock/WRover_Mock.egg-info/SOURCES.txt'
+[0.949s] running build
+[0.950s] running build_py
+[0.950s] running install
+[0.957s] running install_lib
+[0.972s] running install_data
+[0.973s] running install_egg_info
+[0.989s] removing '/workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock-0.0.0-py3.12.egg-info' (and everything under it)
+[0.989s] Copying ../../../build/WRover_Mock/WRover_Mock.egg-info to /workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock-0.0.0-py3.12.egg-info
+[0.990s] running install_scripts
+[1.098s] Installing Robot script to /workspace/install/WRover_Mock/lib/WRover_Mock
+[1.098s] writing list of installed files to '/workspace/build/WRover_Mock/install.log'
+[1.251s] Invoked command in '/workspace/WRPlay/src/wrover_mock' returned '0': PYTHONPATH=/workspace/build/WRover_Mock/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/WRover_Mock/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/WRover_Mock build --build-base /workspace/build/WRover_Mock/build install --record /workspace/build/WRover_Mock/install.log --single-version-externally-managed install_data

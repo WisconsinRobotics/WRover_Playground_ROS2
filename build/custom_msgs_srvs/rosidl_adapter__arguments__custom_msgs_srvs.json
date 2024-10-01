@@ -1,0 +1,9 @@
+{
+  "package_name": "custom_msgs_srvs",
+  "non_idl_tuples": [
+    "/workspace/WRPlay/src/custom_msgs_srvs:msg/DrivePower.msg",
+    "/workspace/WRPlay/src/custom_msgs_srvs:msg/IRSensorData.msg",
+    "/workspace/WRPlay/src/custom_msgs_srvs:srv/ContinuationStatus.srv",
+    "/workspace/WRPlay/src/custom_msgs_srvs:srv/LightStatus.srv"
+  ]
+}

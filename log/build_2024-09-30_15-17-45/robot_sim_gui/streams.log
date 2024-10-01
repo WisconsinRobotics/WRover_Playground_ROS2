@@ -1,0 +1,22 @@
+[0.581s] Invoking command in '/workspace/WRPlay/src/robot_sim_gui': AMENT_PREFIX_PATH=/workspace/install/custom_msgs_srvs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/install/custom_msgs_srvs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/workspace/install/custom_msgs_srvs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/build/robot_sim_gui/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/robot_sim_gui/lib/python3.12/site-packages:/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/robot_sim_gui build --build-base /workspace/build/robot_sim_gui/build install --record /workspace/build/robot_sim_gui/install.log --single-version-externally-managed install_data
+[0.731s] running egg_info
+[0.739s] writing ../../../build/robot_sim_gui/robot_sim_gui.egg-info/PKG-INFO
+[0.740s] writing dependency_links to ../../../build/robot_sim_gui/robot_sim_gui.egg-info/dependency_links.txt
+[0.740s] writing entry points to ../../../build/robot_sim_gui/robot_sim_gui.egg-info/entry_points.txt
+[0.740s] writing requirements to ../../../build/robot_sim_gui/robot_sim_gui.egg-info/requires.txt
+[0.740s] writing top-level names to ../../../build/robot_sim_gui/robot_sim_gui.egg-info/top_level.txt
+[0.758s] reading manifest file '../../../build/robot_sim_gui/robot_sim_gui.egg-info/SOURCES.txt'
+[0.758s] adding license file 'LICENSE'
+[0.758s] writing manifest file '../../../build/robot_sim_gui/robot_sim_gui.egg-info/SOURCES.txt'
+[0.759s] running build
+[0.759s] running build_py
+[0.759s] running install
+[0.763s] running install_lib
+[0.772s] running install_data
+[0.772s] running install_egg_info
+[0.782s] removing '/workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui-0.0.0-py3.12.egg-info' (and everything under it)
+[0.782s] Copying ../../../build/robot_sim_gui/robot_sim_gui.egg-info to /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui-0.0.0-py3.12.egg-info
+[0.783s] running install_scripts
+[0.850s] Installing gui script to /workspace/install/robot_sim_gui/lib/robot_sim_gui
+[0.851s] writing list of installed files to '/workspace/build/robot_sim_gui/install.log'
+[0.874s] Invoked command in '/workspace/WRPlay/src/robot_sim_gui' returned '0': AMENT_PREFIX_PATH=/workspace/install/custom_msgs_srvs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/install/custom_msgs_srvs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/workspace/install/custom_msgs_srvs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/build/robot_sim_gui/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/robot_sim_gui/lib/python3.12/site-packages:/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/robot_sim_gui build --build-base /workspace/build/robot_sim_gui/build install --record /workspace/build/robot_sim_gui/install.log --single-version-externally-managed install_data

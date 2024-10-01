@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "custom_msgs_srvs/srv/ContinuationStatus_Request",
+      "fields": [
+        {
+          "name": "nada",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "custom_msgs_srvs/srv/ContinuationStatus_Request",
+      "hash_string": "RIHS01_002f45e39345ea3840e9396f1068edbc03b8a9f4e23b3767e20227314edcbf55"
+    }
+  ]
+}

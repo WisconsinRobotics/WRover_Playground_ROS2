@@ -1,0 +1,4 @@
+Invoking command in '/workspace/build/custom_msgs_srvs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /workspace/build/custom_msgs_srvs -- -j16 -l16
+Invoked command in '/workspace/build/custom_msgs_srvs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /workspace/build/custom_msgs_srvs -- -j16 -l16
+Invoking command in '/workspace/build/custom_msgs_srvs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /workspace/build/custom_msgs_srvs
+Invoked command in '/workspace/build/custom_msgs_srvs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /workspace/build/custom_msgs_srvs

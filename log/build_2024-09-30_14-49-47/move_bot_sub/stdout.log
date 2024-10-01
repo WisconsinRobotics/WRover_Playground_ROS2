@@ -1,0 +1,23 @@
+running egg_info
+writing ../../../build/move_bot_sub/move_bot_sub.egg-info/PKG-INFO
+writing dependency_links to ../../../build/move_bot_sub/move_bot_sub.egg-info/dependency_links.txt
+writing entry points to ../../../build/move_bot_sub/move_bot_sub.egg-info/entry_points.txt
+writing requirements to ../../../build/move_bot_sub/move_bot_sub.egg-info/requires.txt
+writing top-level names to ../../../build/move_bot_sub/move_bot_sub.egg-info/top_level.txt
+reading manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'
+running build
+running build_py
+copying move_bot_sub/publisher_member_function.py -> /workspace/build/move_bot_sub/build/lib/move_bot_sub
+running install
+running install_lib
+copying /workspace/build/move_bot_sub/build/lib/move_bot_sub/publisher_member_function.py -> /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub
+byte-compiling /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub/publisher_member_function.py to publisher_member_function.cpython-312.pyc
+running install_data
+running install_egg_info
+removing '/workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../../build/move_bot_sub/move_bot_sub.egg-info to /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub-0.0.0-py3.12.egg-info
+running install_scripts
+Installing talker script to /workspace/install/move_bot_sub/lib/move_bot_sub
+writing list of installed files to '/workspace/build/move_bot_sub/install.log'

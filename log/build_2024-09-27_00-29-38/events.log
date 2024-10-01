@@ -1,0 +1,593 @@
+[0.000000] (-) TimerEvent: {}
+[0.000312] (WRover_Mock) JobQueued: {'identifier': 'WRover_Mock', 'dependencies': OrderedDict()}
+[0.000403] (custom_msgs_srvs) JobQueued: {'identifier': 'custom_msgs_srvs', 'dependencies': OrderedDict()}
+[0.000429] (move_bot_sub) JobQueued: {'identifier': 'move_bot_sub', 'dependencies': OrderedDict({'custom_msgs_srvs': '/workspace/install/custom_msgs_srvs'})}
+[0.000450] (robot_sim_gui) JobQueued: {'identifier': 'robot_sim_gui', 'dependencies': OrderedDict({'custom_msgs_srvs': '/workspace/install/custom_msgs_srvs'})}
+[0.000465] (custom_msgs_srvs) JobStarted: {'identifier': 'custom_msgs_srvs'}
+[0.007468] (WRover_Mock) JobStarted: {'identifier': 'WRover_Mock'}
+[0.013776] (custom_msgs_srvs) JobProgress: {'identifier': 'custom_msgs_srvs', 'progress': 'cmake'}
+[0.014096] (custom_msgs_srvs) Command: {'cmd': ['/usr/bin/cmake', '/workspace/WRPlay/src/custom_msgs_srvs', '-DCMAKE_INSTALL_PREFIX=/workspace/install/custom_msgs_srvs'], 'cwd': '/workspace/build/custom_msgs_srvs', 'env': OrderedDict({'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'pop-os', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/workspace/build/custom_msgs_srvs', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.084942] (custom_msgs_srvs) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.2.0\n'}
+[0.099144] (-) TimerEvent: {}
+[0.152657] (custom_msgs_srvs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.2.0\n'}
+[0.173888] (custom_msgs_srvs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199243] (-) TimerEvent: {}
+[0.289364] (custom_msgs_srvs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.299358] (-) TimerEvent: {}
+[0.302217] (custom_msgs_srvs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.302520] (custom_msgs_srvs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.302977] (custom_msgs_srvs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.314398] (custom_msgs_srvs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.399451] (-) TimerEvent: {}
+[0.434586] (custom_msgs_srvs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.445249] (custom_msgs_srvs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.445534] (custom_msgs_srvs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.446166] (custom_msgs_srvs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.451543] (custom_msgs_srvs) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.499548] (-) TimerEvent: {}
+[0.599828] (-) TimerEvent: {}
+[0.646873] (custom_msgs_srvs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.699954] (-) TimerEvent: {}
+[0.773551] (WRover_Mock) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/WRover_Mock', 'build', '--build-base', '/workspace/build/WRover_Mock/build', 'install', '--record', '/workspace/build/WRover_Mock/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/workspace/WRPlay/src/wrover_mock', 'env': {'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'pop-os', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/workspace/build/WRover_Mock', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/workspace/build/WRover_Mock/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/WRover_Mock/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[0.800090] (-) TimerEvent: {}
+[0.805616] (custom_msgs_srvs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[0.816370] (custom_msgs_srvs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.897998] (custom_msgs_srvs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.900188] (-) TimerEvent: {}
+[0.966846] (custom_msgs_srvs) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.3 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[1.000345] (-) TimerEvent: {}
+[1.023344] (WRover_Mock) StdoutLine: {'line': b'running egg_info\n'}
+[1.023770] (WRover_Mock) StdoutLine: {'line': b'creating ../../../build/WRover_Mock/WRover_Mock.egg-info\n'}
+[1.038725] (WRover_Mock) StdoutLine: {'line': b'writing ../../../build/WRover_Mock/WRover_Mock.egg-info/PKG-INFO\n'}
+[1.038929] (WRover_Mock) StdoutLine: {'line': b'writing dependency_links to ../../../build/WRover_Mock/WRover_Mock.egg-info/dependency_links.txt\n'}
+[1.039069] (WRover_Mock) StdoutLine: {'line': b'writing entry points to ../../../build/WRover_Mock/WRover_Mock.egg-info/entry_points.txt\n'}
+[1.039168] (WRover_Mock) StdoutLine: {'line': b'writing requirements to ../../../build/WRover_Mock/WRover_Mock.egg-info/requires.txt\n'}
+[1.039250] (WRover_Mock) StdoutLine: {'line': b'writing top-level names to ../../../build/WRover_Mock/WRover_Mock.egg-info/top_level.txt\n'}
+[1.039324] (WRover_Mock) StdoutLine: {'line': b"writing manifest file '../../../build/WRover_Mock/WRover_Mock.egg-info/SOURCES.txt'\n"}
+[1.070664] (WRover_Mock) StdoutLine: {'line': b"reading manifest file '../../../build/WRover_Mock/WRover_Mock.egg-info/SOURCES.txt'\n"}
+[1.070869] (WRover_Mock) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[1.071363] (WRover_Mock) StdoutLine: {'line': b"writing manifest file '../../../build/WRover_Mock/WRover_Mock.egg-info/SOURCES.txt'\n"}
+[1.071534] (WRover_Mock) StdoutLine: {'line': b'running build\n'}
+[1.071820] (WRover_Mock) StdoutLine: {'line': b'running build_py\n'}
+[1.072024] (WRover_Mock) StdoutLine: {'line': b'creating /workspace/build/WRover_Mock/build\n'}
+[1.072235] (WRover_Mock) StdoutLine: {'line': b'creating /workspace/build/WRover_Mock/build/lib\n'}
+[1.072406] (WRover_Mock) StdoutLine: {'line': b'creating /workspace/build/WRover_Mock/build/lib/WRover_Mock\n'}
+[1.072545] (WRover_Mock) StdoutLine: {'line': b'copying WRover_Mock/Robot.py -> /workspace/build/WRover_Mock/build/lib/WRover_Mock\n'}
+[1.072682] (WRover_Mock) StdoutLine: {'line': b'copying WRover_Mock/__init__.py -> /workspace/build/WRover_Mock/build/lib/WRover_Mock\n'}
+[1.072818] (WRover_Mock) StdoutLine: {'line': b'copying WRover_Mock/AbstractRobot.py -> /workspace/build/WRover_Mock/build/lib/WRover_Mock\n'}
+[1.072951] (WRover_Mock) StdoutLine: {'line': b'running install\n'}
+[1.079396] (WRover_Mock) StdoutLine: {'line': b'running install_lib\n'}
+[1.095050] (WRover_Mock) StdoutLine: {'line': b'creating /workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock\n'}
+[1.095384] (WRover_Mock) StdoutLine: {'line': b'copying /workspace/build/WRover_Mock/build/lib/WRover_Mock/Robot.py -> /workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock\n'}
+[1.095531] (WRover_Mock) StdoutLine: {'line': b'copying /workspace/build/WRover_Mock/build/lib/WRover_Mock/__init__.py -> /workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock\n'}
+[1.095664] (WRover_Mock) StdoutLine: {'line': b'copying /workspace/build/WRover_Mock/build/lib/WRover_Mock/AbstractRobot.py -> /workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock\n'}
+[1.095865] (WRover_Mock) StdoutLine: {'line': b'byte-compiling /workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock/Robot.py to Robot.cpython-312.pyc\n'}
+[1.096761] (WRover_Mock) StdoutLine: {'line': b'byte-compiling /workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock/__init__.py to __init__.cpython-312.pyc\n'}
+[1.096957] (WRover_Mock) StdoutLine: {'line': b'byte-compiling /workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock/AbstractRobot.py to AbstractRobot.cpython-312.pyc\n'}
+[1.098024] (WRover_Mock) StdoutLine: {'line': b'running install_data\n'}
+[1.098370] (WRover_Mock) StdoutLine: {'line': b'creating /workspace/install/WRover_Mock/share/ament_index\n'}
+[1.098595] (WRover_Mock) StdoutLine: {'line': b'creating /workspace/install/WRover_Mock/share/ament_index/resource_index\n'}
+[1.098756] (WRover_Mock) StdoutLine: {'line': b'creating /workspace/install/WRover_Mock/share/ament_index/resource_index/packages\n'}
+[1.098917] (WRover_Mock) StdoutLine: {'line': b'copying resource/WRover_Mock -> /workspace/install/WRover_Mock/share/ament_index/resource_index/packages\n'}
+[1.099114] (WRover_Mock) StdoutLine: {'line': b'copying package.xml -> /workspace/install/WRover_Mock/share/WRover_Mock\n'}
+[1.099278] (WRover_Mock) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.100420] (-) TimerEvent: {}
+[1.115488] (WRover_Mock) StdoutLine: {'line': b'Copying ../../../build/WRover_Mock/WRover_Mock.egg-info to /workspace/install/WRover_Mock/lib/python3.12/site-packages/WRover_Mock-0.0.0-py3.12.egg-info\n'}
+[1.116191] (WRover_Mock) StdoutLine: {'line': b'running install_scripts\n'}
+[1.200566] (-) TimerEvent: {}
+[1.230832] (WRover_Mock) StdoutLine: {'line': b'Installing Robot script to /workspace/install/WRover_Mock/lib/WRover_Mock\n'}
+[1.231188] (WRover_Mock) StdoutLine: {'line': b"writing list of installed files to '/workspace/build/WRover_Mock/install.log'\n"}
+[1.260052] (WRover_Mock) CommandEnded: {'returncode': 0}
+[1.269318] (WRover_Mock) JobEnded: {'identifier': 'WRover_Mock', 'rc': 0}
+[1.300696] (-) TimerEvent: {}
+[1.400989] (-) TimerEvent: {}
+[1.501281] (-) TimerEvent: {}
+[1.601627] (-) TimerEvent: {}
+[1.701938] (-) TimerEvent: {}
+[1.739343] (custom_msgs_srvs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[1.802083] (-) TimerEvent: {}
+[1.902434] (-) TimerEvent: {}
+[2.002790] (-) TimerEvent: {}
+[2.103105] (-) TimerEvent: {}
+[2.203419] (-) TimerEvent: {}
+[2.275231] (custom_msgs_srvs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.303556] (-) TimerEvent: {}
+[2.403884] (-) TimerEvent: {}
+[2.504272] (-) TimerEvent: {}
+[2.604560] (-) TimerEvent: {}
+[2.704906] (-) TimerEvent: {}
+[2.805220] (-) TimerEvent: {}
+[2.905557] (-) TimerEvent: {}
+[3.005893] (-) TimerEvent: {}
+[3.019255] (custom_msgs_srvs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.025283] (custom_msgs_srvs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[3.106070] (-) TimerEvent: {}
+[3.206545] (-) TimerEvent: {}
+[3.222012] (custom_msgs_srvs) StdoutLine: {'line': b'-- Found PythonExtra: /usr/bin/python3  \n'}
+[3.306638] (-) TimerEvent: {}
+[3.406891] (-) TimerEvent: {}
+[3.507160] (-) TimerEvent: {}
+[3.607390] (-) TimerEvent: {}
+[3.707649] (-) TimerEvent: {}
+[3.774843] (custom_msgs_srvs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[3.807734] (-) TimerEvent: {}
+[3.830546] (custom_msgs_srvs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[3.869993] (custom_msgs_srvs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.871599] (custom_msgs_srvs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.874759] (custom_msgs_srvs) StdoutLine: {'line': b'-- Configuring done (3.8s)\n'}
+[3.907845] (-) TimerEvent: {}
+[3.916400] (custom_msgs_srvs) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[3.919404] (custom_msgs_srvs) StdoutLine: {'line': b'-- Build files have been written to: /workspace/build/custom_msgs_srvs\n'}
+[3.928749] (custom_msgs_srvs) CommandEnded: {'returncode': 0}
+[3.929255] (custom_msgs_srvs) JobProgress: {'identifier': 'custom_msgs_srvs', 'progress': 'build'}
+[3.930070] (custom_msgs_srvs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspace/build/custom_msgs_srvs', '--', '-j16', '-l16'], 'cwd': '/workspace/build/custom_msgs_srvs', 'env': OrderedDict({'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'pop-os', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/workspace/build/custom_msgs_srvs', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[4.003229] (custom_msgs_srvs) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating type hashes for ROS interfaces\x1b[0m\n'}
+[4.007966] (-) TimerEvent: {}
+[4.013897] (custom_msgs_srvs) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_copy_custom_msgs_srvs\n'}
+[4.108069] (-) TimerEvent: {}
+[4.208325] (-) TimerEvent: {}
+[4.226679] (custom_msgs_srvs) StdoutLine: {'line': b'running egg_info\n'}
+[4.227689] (custom_msgs_srvs) StdoutLine: {'line': b'creating custom_msgs_srvs.egg-info\n'}
+[4.242956] (custom_msgs_srvs) StdoutLine: {'line': b'writing custom_msgs_srvs.egg-info/PKG-INFO\n'}
+[4.243161] (custom_msgs_srvs) StdoutLine: {'line': b'writing dependency_links to custom_msgs_srvs.egg-info/dependency_links.txt\n'}
+[4.243279] (custom_msgs_srvs) StdoutLine: {'line': b'writing top-level names to custom_msgs_srvs.egg-info/top_level.txt\n'}
+[4.243349] (custom_msgs_srvs) StdoutLine: {'line': b"writing manifest file 'custom_msgs_srvs.egg-info/SOURCES.txt'\n"}
+[4.263925] (custom_msgs_srvs) StdoutLine: {'line': b'[  1%] Built target custom_msgs_srvs__rosidl_generator_type_description\n'}
+[4.279407] (custom_msgs_srvs) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[4.287773] (custom_msgs_srvs) StdoutLine: {'line': b"reading manifest file 'custom_msgs_srvs.egg-info/SOURCES.txt'\n"}
+[4.288215] (custom_msgs_srvs) StdoutLine: {'line': b"writing manifest file 'custom_msgs_srvs.egg-info/SOURCES.txt'\n"}
+[4.290610] (custom_msgs_srvs) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[4.308416] (-) TimerEvent: {}
+[4.320548] (custom_msgs_srvs) StdoutLine: {'line': b'[  4%] Built target ament_cmake_python_build_custom_msgs_srvs_egg\n'}
+[4.408515] (-) TimerEvent: {}
+[4.508809] (-) TimerEvent: {}
+[4.609082] (-) TimerEvent: {}
+[4.709355] (-) TimerEvent: {}
+[4.724023] (custom_msgs_srvs) StdoutLine: {'line': b'[  4%] Built target custom_msgs_srvs__cpp\n'}
+[4.809752] (-) TimerEvent: {}
+[4.825636] (custom_msgs_srvs) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/msg/detail/drive_power__description.c.o\x1b[0m\n'}
+[4.825986] (custom_msgs_srvs) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/msg/detail/ir_sensor_data__type_support.c.o\x1b[0m\n'}
+[4.827349] (custom_msgs_srvs) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/srv/detail/light_status__description.c.o\x1b[0m\n'}
+[4.827588] (custom_msgs_srvs) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/msg/detail/ir_sensor_data__description.c.o\x1b[0m\n'}
+[4.827833] (custom_msgs_srvs) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/msg/detail/ir_sensor_data__functions.c.o\x1b[0m\n'}
+[4.828889] (custom_msgs_srvs) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/srv/detail/continuation_status__functions.c.o\x1b[0m\n'}
+[4.829427] (custom_msgs_srvs) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/srv/detail/light_status__functions.c.o\x1b[0m\n'}
+[4.829630] (custom_msgs_srvs) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/srv/detail/continuation_status__description.c.o\x1b[0m\n'}
+[4.829852] (custom_msgs_srvs) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/srv/detail/light_status__type_support.c.o\x1b[0m\n'}
+[4.832038] (custom_msgs_srvs) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/msg/detail/drive_power__type_support.c.o\x1b[0m\n'}
+[4.832896] (custom_msgs_srvs) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/msg/detail/drive_power__functions.c.o\x1b[0m\n'}
+[4.833085] (custom_msgs_srvs) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs_srvs/srv/detail/continuation_status__type_support.c.o\x1b[0m\n'}
+[4.909865] (-) TimerEvent: {}
+[4.941580] (custom_msgs_srvs) StdoutLine: {'line': b'[ 25%] \x1b[32m\x1b[1mLinking C shared library libcustom_msgs_srvs__rosidl_generator_c.so\x1b[0m\n'}
+[4.992738] (custom_msgs_srvs) StdoutLine: {'line': b'[ 25%] Built target custom_msgs_srvs__rosidl_generator_c\n'}
+[5.010090] (-) TimerEvent: {}
+[5.043002] (custom_msgs_srvs) StdoutLine: {'line': b'[ 26%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[5.045207] (custom_msgs_srvs) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[5.045772] (custom_msgs_srvs) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.046316] (custom_msgs_srvs) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.053099] (custom_msgs_srvs) StdoutLine: {'line': b'[ 32%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.057218] (custom_msgs_srvs) StdoutLine: {'line': b'[ 34%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.110225] (-) TimerEvent: {}
+[5.210537] (-) TimerEvent: {}
+[5.310890] (-) TimerEvent: {}
+[5.387264] (custom_msgs_srvs) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msgs_srvs/srv/continuation_status__type_support.cpp.o\x1b[0m\n'}
+[5.387937] (custom_msgs_srvs) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msgs_srvs/srv/light_status__type_support.cpp.o\x1b[0m\n'}
+[5.389945] (custom_msgs_srvs) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msgs_srvs/msg/ir_sensor_data__type_support.cpp.o\x1b[0m\n'}
+[5.390275] (custom_msgs_srvs) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msgs_srvs/msg/drive_power__type_support.cpp.o\x1b[0m\n'}
+[5.404618] (custom_msgs_srvs) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msgs_srvs/msg/drive_power__type_support.cpp.o\x1b[0m\n'}
+[5.407323] (custom_msgs_srvs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msgs_srvs/msg/ir_sensor_data__type_support.cpp.o\x1b[0m\n'}
+[5.409458] (custom_msgs_srvs) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msgs_srvs/srv/continuation_status__type_support.cpp.o\x1b[0m\n'}
+[5.410978] (-) TimerEvent: {}
+[5.412089] (custom_msgs_srvs) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msgs_srvs/srv/light_status__type_support.cpp.o\x1b[0m\n'}
+[5.441324] (custom_msgs_srvs) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msgs_srvs/msg/detail/ir_sensor_data__type_support.cpp.o\x1b[0m\n'}
+[5.441589] (custom_msgs_srvs) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msgs_srvs/msg/detail/drive_power__type_support.cpp.o\x1b[0m\n'}
+[5.442581] (custom_msgs_srvs) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msgs_srvs/srv/detail/light_status__type_support.cpp.o\x1b[0m\n'}
+[5.447979] (custom_msgs_srvs) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msgs_srvs/srv/detail/continuation_status__type_support.cpp.o\x1b[0m\n'}
+[5.511082] (-) TimerEvent: {}
+[5.514846] (custom_msgs_srvs) StdoutLine: {'line': b'[ 54%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msgs_srvs__rosidl_typesupport_c.so\x1b[0m\n'}
+[5.524040] (custom_msgs_srvs) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msgs_srvs/msg/detail/ir_sensor_data__type_support.c.o\x1b[0m\n'}
+[5.526661] (custom_msgs_srvs) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msgs_srvs/srv/detail/light_status__type_support.c.o\x1b[0m\n'}
+[5.527658] (custom_msgs_srvs) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msgs_srvs/srv/detail/continuation_status__type_support.c.o\x1b[0m\n'}
+[5.528482] (custom_msgs_srvs) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msgs_srvs/msg/detail/drive_power__type_support.c.o\x1b[0m\n'}
+[5.601609] (custom_msgs_srvs) StdoutLine: {'line': b'[ 60%] Built target custom_msgs_srvs__rosidl_typesupport_c\n'}
+[5.611200] (-) TimerEvent: {}
+[5.616671] (custom_msgs_srvs) StdoutLine: {'line': b'[ 62%] \x1b[32m\x1b[1mLinking C shared library libcustom_msgs_srvs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[5.639137] (custom_msgs_srvs) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msgs_srvs/srv/detail/dds_fastrtps/light_status__type_support.cpp.o\x1b[0m\n'}
+[5.639418] (custom_msgs_srvs) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msgs_srvs/msg/detail/dds_fastrtps/ir_sensor_data__type_support.cpp.o\x1b[0m\n'}
+[5.639532] (custom_msgs_srvs) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msgs_srvs/srv/detail/dds_fastrtps/continuation_status__type_support.cpp.o\x1b[0m\n'}
+[5.642605] (custom_msgs_srvs) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msgs_srvs/msg/detail/dds_fastrtps/drive_power__type_support.cpp.o\x1b[0m\n'}
+[5.683186] (custom_msgs_srvs) StdoutLine: {'line': b'[ 68%] Built target custom_msgs_srvs__rosidl_typesupport_introspection_c\n'}
+[5.711311] (-) TimerEvent: {}
+[5.722195] (custom_msgs_srvs) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msgs_srvs/srv/detail/continuation_status__type_support_c.cpp.o\x1b[0m\n'}
+[5.722504] (custom_msgs_srvs) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msgs_srvs/msg/detail/drive_power__type_support_c.cpp.o\x1b[0m\n'}
+[5.722661] (custom_msgs_srvs) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msgs_srvs/srv/detail/light_status__type_support_c.cpp.o\x1b[0m\n'}
+[5.722782] (custom_msgs_srvs) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/custom_msgs_srvs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msgs_srvs/msg/detail/ir_sensor_data__type_support_c.cpp.o\x1b[0m\n'}
+[5.814190] (-) TimerEvent: {}
+[5.914519] (-) TimerEvent: {}
+[6.014852] (-) TimerEvent: {}
+[6.115192] (-) TimerEvent: {}
+[6.215514] (-) TimerEvent: {}
+[6.315864] (-) TimerEvent: {}
+[6.339879] (custom_msgs_srvs) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msgs_srvs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[6.381737] (custom_msgs_srvs) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msgs_srvs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[6.415993] (-) TimerEvent: {}
+[6.491844] (custom_msgs_srvs) StdoutLine: {'line': b'[ 78%] Built target custom_msgs_srvs__rosidl_typesupport_cpp\n'}
+[6.516111] (-) TimerEvent: {}
+[6.516384] (custom_msgs_srvs) StdoutLine: {'line': b'[ 78%] Built target custom_msgs_srvs__rosidl_typesupport_introspection_cpp\n'}
+[6.616194] (-) TimerEvent: {}
+[6.669252] (custom_msgs_srvs) StdoutLine: {'line': b'[ 79%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msgs_srvs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[6.710768] (custom_msgs_srvs) StdoutLine: {'line': b'[ 81%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msgs_srvs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[6.716261] (-) TimerEvent: {}
+[6.755468] (custom_msgs_srvs) StdoutLine: {'line': b'[ 81%] Built target custom_msgs_srvs__rosidl_typesupport_fastrtps_cpp\n'}
+[6.765712] (custom_msgs_srvs) StdoutLine: {'line': b'[ 81%] Built target custom_msgs_srvs__rosidl_typesupport_fastrtps_c\n'}
+[6.797287] (custom_msgs_srvs) StdoutLine: {'line': b'[ 81%] Built target custom_msgs_srvs\n'}
+[6.816383] (-) TimerEvent: {}
+[6.831558] (custom_msgs_srvs) StdoutLine: {'line': b'[ 82%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[6.916517] (-) TimerEvent: {}
+[7.016846] (-) TimerEvent: {}
+[7.117151] (-) TimerEvent: {}
+[7.217601] (-) TimerEvent: {}
+[7.317854] (-) TimerEvent: {}
+[7.418131] (-) TimerEvent: {}
+[7.464674] (custom_msgs_srvs) StdoutLine: {'line': b'[ 82%] Built target custom_msgs_srvs__py\n'}
+[7.490855] (custom_msgs_srvs) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_py.dir/rosidl_generator_py/custom_msgs_srvs/msg/_drive_power_s.c.o\x1b[0m\n'}
+[7.491282] (custom_msgs_srvs) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_py.dir/rosidl_generator_py/custom_msgs_srvs/srv/_continuation_status_s.c.o\x1b[0m\n'}
+[7.491416] (custom_msgs_srvs) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_py.dir/rosidl_generator_py/custom_msgs_srvs/msg/_ir_sensor_data_s.c.o\x1b[0m\n'}
+[7.491522] (custom_msgs_srvs) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs__rosidl_generator_py.dir/rosidl_generator_py/custom_msgs_srvs/srv/_light_status_s.c.o\x1b[0m\n'}
+[7.518212] (-) TimerEvent: {}
+[7.618467] (-) TimerEvent: {}
+[7.679938] (custom_msgs_srvs) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking C shared library libcustom_msgs_srvs__rosidl_generator_py.so\x1b[0m\n'}
+[7.718590] (-) TimerEvent: {}
+[7.729303] (custom_msgs_srvs) StdoutLine: {'line': b'[ 90%] Built target custom_msgs_srvs__rosidl_generator_py\n'}
+[7.754130] (custom_msgs_srvs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/custom_msgs_srvs/_custom_msgs_srvs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[7.754445] (custom_msgs_srvs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs_s__rosidl_typesupport_c.dir/rosidl_generator_py/custom_msgs_srvs/_custom_msgs_srvs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[7.755538] (custom_msgs_srvs) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/custom_msgs_srvs_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/custom_msgs_srvs/_custom_msgs_srvs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[7.818702] (-) TimerEvent: {}
+[7.897729] (custom_msgs_srvs) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[7.898054] (custom_msgs_srvs) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_c.so\x1b[0m\n'}
+[7.905746] (custom_msgs_srvs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[7.918819] (-) TimerEvent: {}
+[7.933567] (custom_msgs_srvs) StdoutLine: {'line': b'[100%] Built target custom_msgs_srvs_s__rosidl_typesupport_c\n'}
+[7.934444] (custom_msgs_srvs) StdoutLine: {'line': b'[100%] Built target custom_msgs_srvs_s__rosidl_typesupport_introspection_c\n'}
+[7.944355] (custom_msgs_srvs) StdoutLine: {'line': b'[100%] Built target custom_msgs_srvs_s__rosidl_typesupport_fastrtps_c\n'}
+[7.959536] (custom_msgs_srvs) CommandEnded: {'returncode': 0}
+[8.019029] (-) TimerEvent: {}
+[8.119653] (-) TimerEvent: {}
+[8.220492] (-) TimerEvent: {}
+[8.320903] (-) TimerEvent: {}
+[8.338505] (custom_msgs_srvs) JobProgress: {'identifier': 'custom_msgs_srvs', 'progress': 'install'}
+[8.350618] (custom_msgs_srvs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspace/build/custom_msgs_srvs'], 'cwd': '/workspace/build/custom_msgs_srvs', 'env': OrderedDict({'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'pop-os', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/workspace/build/custom_msgs_srvs', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[8.360507] (custom_msgs_srvs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.360845] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/ament_index/resource_index/rosidl_interfaces/custom_msgs_srvs\n'}
+[8.361067] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/msg/DrivePower.json\n'}
+[8.361371] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/msg/IRSensorData.json\n'}
+[8.361590] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/srv/ContinuationStatus.json\n'}
+[8.361667] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/srv/LightStatus.json\n'}
+[8.361732] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs\n'}
+[8.361867] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv\n'}
+[8.362079] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail\n'}
+[8.362387] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__description.c\n'}
+[8.362549] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__functions.c\n'}
+[8.362713] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__type_support.c\n'}
+[8.362902] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__functions.c\n'}
+[8.363046] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__functions.h\n'}
+[8.363867] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__struct.h\n'}
+[8.364304] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__type_support.h\n'}
+[8.364378] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__type_support.c\n'}
+[8.364444] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__type_support.h\n'}
+[8.364507] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__description.c\n'}
+[8.364570] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__functions.h\n'}
+[8.364632] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__struct.h\n'}
+[8.364693] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/continuation_status.h\n'}
+[8.364755] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/light_status.h\n'}
+[8.364818] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg\n'}
+[8.364881] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/ir_sensor_data.h\n'}
+[8.364942] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail\n'}
+[8.365000] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__functions.c\n'}
+[8.365058] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__description.c\n'}
+[8.365220] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__type_support.c\n'}
+[8.365366] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__type_support.h\n'}
+[8.365468] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__functions.h\n'}
+[8.365539] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__struct.h\n'}
+[8.365607] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__type_support.h\n'}
+[8.365687] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__functions.h\n'}
+[8.365744] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__struct.h\n'}
+[8.365803] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__type_support.c\n'}
+[8.365859] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__functions.c\n'}
+[8.365915] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__description.c\n'}
+[8.365970] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/rosidl_generator_c__visibility_control.h\n'}
+[8.366028] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/drive_power.h\n'}
+[8.366087] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/environment/library_path.sh\n'}
+[8.366155] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/environment/library_path.dsv\n'}
+[8.366250] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_generator_c.so\n'}
+[8.366312] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_generator_c.so" to ""\n'}
+[8.366372] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs\n'}
+[8.366433] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv\n'}
+[8.366492] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail\n'}
+[8.366551] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__rosidl_typesupport_fastrtps_c.h\n'}
+[8.366633] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__rosidl_typesupport_fastrtps_c.h\n'}
+[8.366734] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg\n'}
+[8.366796] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail\n'}
+[8.366852] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__rosidl_typesupport_fastrtps_c.h\n'}
+[8.366905] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__rosidl_typesupport_fastrtps_c.h\n'}
+[8.366959] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[8.367013] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_fastrtps_c.so\n'}
+[8.367100] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[8.367196] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs\n'}
+[8.367323] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv\n'}
+[8.367388] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail\n'}
+[8.367451] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__type_support.c\n'}
+[8.367545] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__rosidl_typesupport_introspection_c.h\n'}
+[8.367679] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__rosidl_typesupport_introspection_c.h\n'}
+[8.367783] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__type_support.c\n'}
+[8.368193] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg\n'}
+[8.368258] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail\n'}
+[8.368324] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__type_support.c\n'}
+[8.368387] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__rosidl_typesupport_introspection_c.h\n'}
+[8.368513] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__type_support.c\n'}
+[8.368656] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__rosidl_typesupport_introspection_c.h\n'}
+[8.368939] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[8.369023] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_introspection_c.so\n'}
+[8.369085] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[8.369176] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_c.so\n'}
+[8.369241] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_c.so" to ""\n'}
+[8.369413] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs\n'}
+[8.369672] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv\n'}
+[8.369853] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail\n'}
+[8.370015] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__traits.hpp\n'}
+[8.370752] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__struct.hpp\n'}
+[8.371031] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__builder.hpp\n'}
+[8.371253] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__builder.hpp\n'}
+[8.371441] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__type_support.hpp\n'}
+[8.371585] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__struct.hpp\n'}
+[8.371726] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__type_support.hpp\n'}
+[8.371866] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__traits.hpp\n'}
+[8.372002] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/light_status.hpp\n'}
+[8.372170] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/continuation_status.hpp\n'}
+[8.372386] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg\n'}
+[8.372530] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail\n'}
+[8.372777] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__type_support.hpp\n'}
+[8.372895] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__traits.hpp\n'}
+[8.372974] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__traits.hpp\n'}
+[8.373039] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__struct.hpp\n'}
+[8.373101] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__builder.hpp\n'}
+[8.373254] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__builder.hpp\n'}
+[8.373366] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__struct.hpp\n'}
+[8.373426] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__type_support.hpp\n'}
+[8.373491] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[8.373554] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/drive_power.hpp\n'}
+[8.373616] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/ir_sensor_data.hpp\n'}
+[8.373774] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs\n'}
+[8.373839] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv\n'}
+[8.373895] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail\n'}
+[8.373953] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[8.374017] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[8.374072] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/dds_fastrtps\n'}
+[8.374137] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg\n'}
+[8.374199] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail\n'}
+[8.374257] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[8.374362] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[8.374424] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/dds_fastrtps\n'}
+[8.374484] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[8.374545] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[8.374604] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[8.374662] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs\n'}
+[8.374720] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv\n'}
+[8.374777] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail\n'}
+[8.374836] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[8.374894] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__type_support.cpp\n'}
+[8.374951] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/light_status__type_support.cpp\n'}
+[8.375011] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/srv/detail/continuation_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[8.375070] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg\n'}
+[8.375144] (custom_msgs_srvs) StdoutLine: {'line': b'-- Up-to-date: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail\n'}
+[8.375563] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[8.375631] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__rosidl_typesupport_introspection_cpp.hpp\n'}
+[8.375692] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/ir_sensor_data__type_support.cpp\n'}
+[8.375753] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/include/custom_msgs_srvs/custom_msgs_srvs/msg/detail/drive_power__type_support.cpp\n'}
+[8.375863] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_introspection_cpp.so\n'}
+[8.375925] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[8.375987] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_cpp.so\n'}
+[8.376077] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_typesupport_cpp.so" to ""\n'}
+[8.376422] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/environment/pythonpath.sh\n'}
+[8.376484] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/environment/pythonpath.dsv\n'}
+[8.376546] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs-0.0.0-py3.12.egg-info\n'}
+[8.376606] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs-0.0.0-py3.12.egg-info/top_level.txt\n'}
+[8.376666] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs-0.0.0-py3.12.egg-info/dependency_links.txt\n'}
+[8.376726] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs-0.0.0-py3.12.egg-info/SOURCES.txt\n'}
+[8.376877] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs-0.0.0-py3.12.egg-info/PKG-INFO\n'}
+[8.377033] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs\n'}
+[8.377209] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/__init__.py\n'}
+[8.377372] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/_custom_msgs_srvs_s.ep.rosidl_typesupport_c.c\n'}
+[8.377536] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_c.so\n'}
+[8.377739] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv\n'}
+[8.377902] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv/__init__.py\n'}
+[8.377980] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv/_continuation_status.py\n'}
+[8.378072] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv/_continuation_status_s.c\n'}
+[8.378187] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv/_light_status.py\n'}
+[8.378359] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv/_light_status_s.c\n'}
+[8.378432] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg\n'}
+[8.378495] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg/__init__.py\n'}
+[8.378557] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg/_drive_power.py\n'}
+[8.378613] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg/_ir_sensor_data_s.c\n'}
+[8.378671] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg/_drive_power_s.c\n'}
+[8.378727] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg/_ir_sensor_data.py\n'}
+[8.378784] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_introspection_c.so\n'}
+[8.378840] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_fastrtps_c.so\n'}
+[8.378898] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/_custom_msgs_srvs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[8.378953] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/_custom_msgs_srvs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[8.421020] (-) TimerEvent: {}
+[8.432254] (custom_msgs_srvs) StdoutLine: {'line': b"Listing '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs'...\n"}
+[8.432439] (custom_msgs_srvs) StdoutLine: {'line': b"Compiling '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/__init__.py'...\n"}
+[8.432526] (custom_msgs_srvs) StdoutLine: {'line': b"Listing '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg'...\n"}
+[8.432587] (custom_msgs_srvs) StdoutLine: {'line': b"Compiling '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg/__init__.py'...\n"}
+[8.432673] (custom_msgs_srvs) StdoutLine: {'line': b"Compiling '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg/_drive_power.py'...\n"}
+[8.432742] (custom_msgs_srvs) StdoutLine: {'line': b"Compiling '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/msg/_ir_sensor_data.py'...\n"}
+[8.432801] (custom_msgs_srvs) StdoutLine: {'line': b"Listing '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv'...\n"}
+[8.432858] (custom_msgs_srvs) StdoutLine: {'line': b"Compiling '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv/__init__.py'...\n"}
+[8.432913] (custom_msgs_srvs) StdoutLine: {'line': b"Compiling '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv/_continuation_status.py'...\n"}
+[8.432969] (custom_msgs_srvs) StdoutLine: {'line': b"Compiling '/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/srv/_light_status.py'...\n"}
+[8.439756] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_fastrtps_c.so\n'}
+[8.439940] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[8.440107] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_introspection_c.so\n'}
+[8.440661] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_introspection_c.so" to ""\n'}
+[8.440803] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_c.so\n'}
+[8.441073] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages/custom_msgs_srvs/custom_msgs_srvs_s__rosidl_typesupport_c.so" to ""\n'}
+[8.441169] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_generator_py.so\n'}
+[8.441498] (custom_msgs_srvs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/workspace/install/custom_msgs_srvs/lib/libcustom_msgs_srvs__rosidl_generator_py.so" to ""\n'}
+[8.441689] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/msg/DrivePower.idl\n'}
+[8.441784] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/msg/IRSensorData.idl\n'}
+[8.441888] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/srv/ContinuationStatus.idl\n'}
+[8.442000] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/srv/LightStatus.idl\n'}
+[8.442081] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/msg/DrivePower.msg\n'}
+[8.442185] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/msg/IRSensorData.msg\n'}
+[8.442251] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/srv/ContinuationStatus.srv\n'}
+[8.442322] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/srv/LightStatus.srv\n'}
+[8.442412] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/ament_index/resource_index/package_run_dependencies/custom_msgs_srvs\n'}
+[8.442506] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/ament_index/resource_index/parent_prefix_path/custom_msgs_srvs\n'}
+[8.442598] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/environment/ament_prefix_path.sh\n'}
+[8.442691] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/environment/ament_prefix_path.dsv\n'}
+[8.442782] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/environment/path.sh\n'}
+[8.442873] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/environment/path.dsv\n'}
+[8.442965] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/local_setup.bash\n'}
+[8.443049] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/local_setup.sh\n'}
+[8.443150] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/local_setup.zsh\n'}
+[8.443272] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/local_setup.dsv\n'}
+[8.443437] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/package.dsv\n'}
+[8.443506] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/ament_index/resource_index/packages/custom_msgs_srvs\n'}
+[8.443601] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/export_custom_msgs_srvs__rosidl_generator_cExport.cmake\n'}
+[8.443714] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/export_custom_msgs_srvs__rosidl_generator_cExport-noconfig.cmake\n'}
+[8.443817] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/export_custom_msgs_srvs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[8.443920] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/export_custom_msgs_srvs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[8.444039] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[8.444131] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[8.444214] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvs__rosidl_typesupport_cExport.cmake\n'}
+[8.444294] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[8.444414] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/export_custom_msgs_srvs__rosidl_generator_cppExport.cmake\n'}
+[8.444512] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/export_custom_msgs_srvs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[8.444595] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/export_custom_msgs_srvs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[8.444698] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[8.444801] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[8.444894] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvs__rosidl_typesupport_cppExport.cmake\n'}
+[8.444983] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[8.445098] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/export_custom_msgs_srvs__rosidl_generator_pyExport.cmake\n'}
+[8.445198] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/export_custom_msgs_srvs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[8.445325] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/rosidl_cmake-extras.cmake\n'}
+[8.445422] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[8.445525] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[8.445621] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[8.445715] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[8.445822] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[8.445915] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[8.446005] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvsConfig.cmake\n'}
+[8.446090] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/cmake/custom_msgs_srvsConfig-version.cmake\n'}
+[8.446182] (custom_msgs_srvs) StdoutLine: {'line': b'-- Installing: /workspace/install/custom_msgs_srvs/share/custom_msgs_srvs/package.xml\n'}
+[8.448474] (custom_msgs_srvs) CommandEnded: {'returncode': 0}
+[8.521133] (-) TimerEvent: {}
+[8.621417] (-) TimerEvent: {}
+[8.712358] (custom_msgs_srvs) JobEnded: {'identifier': 'custom_msgs_srvs', 'rc': 0}
+[8.713371] (move_bot_sub) JobStarted: {'identifier': 'move_bot_sub'}
+[8.718523] (robot_sim_gui) JobStarted: {'identifier': 'robot_sim_gui'}
+[8.721602] (-) TimerEvent: {}
+[8.821887] (-) TimerEvent: {}
+[8.922220] (-) TimerEvent: {}
+[9.022513] (-) TimerEvent: {}
+[9.122803] (-) TimerEvent: {}
+[9.223204] (-) TimerEvent: {}
+[9.323492] (-) TimerEvent: {}
+[9.423779] (-) TimerEvent: {}
+[9.524102] (-) TimerEvent: {}
+[9.624366] (-) TimerEvent: {}
+[9.724659] (-) TimerEvent: {}
+[9.742515] (move_bot_sub) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/move_bot_sub', 'build', '--build-base', '/workspace/build/move_bot_sub/build', 'install', '--record', '/workspace/build/move_bot_sub/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/workspace/WRPlay/src/move_bot_sub', 'env': {'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'pop-os', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/workspace/install/custom_msgs_srvs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/workspace/install/custom_msgs_srvs:/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/workspace/build/move_bot_sub', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/workspace/build/move_bot_sub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/move_bot_sub/lib/python3.12/site-packages:/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/workspace/install/custom_msgs_srvs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[9.758339] (robot_sim_gui) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/robot_sim_gui', 'build', '--build-base', '/workspace/build/robot_sim_gui/build', 'install', '--record', '/workspace/build/robot_sim_gui/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/workspace/WRPlay/src/robot_sim_gui', 'env': {'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'pop-os', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/workspace/install/custom_msgs_srvs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/workspace/install/custom_msgs_srvs:/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/workspace/build/robot_sim_gui', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/workspace/build/robot_sim_gui/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/robot_sim_gui/lib/python3.12/site-packages:/workspace/install/custom_msgs_srvs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/workspace/install/custom_msgs_srvs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[9.824794] (-) TimerEvent: {}
+[9.925095] (-) TimerEvent: {}
+[9.994832] (move_bot_sub) StdoutLine: {'line': b'running egg_info\n'}
+[9.995198] (move_bot_sub) StdoutLine: {'line': b'creating ../../../build/move_bot_sub/move_bot_sub.egg-info\n'}
+[10.009841] (move_bot_sub) StdoutLine: {'line': b'writing ../../../build/move_bot_sub/move_bot_sub.egg-info/PKG-INFO\n'}
+[10.010068] (move_bot_sub) StdoutLine: {'line': b'writing dependency_links to ../../../build/move_bot_sub/move_bot_sub.egg-info/dependency_links.txt\n'}
+[10.010212] (move_bot_sub) StdoutLine: {'line': b'writing entry points to ../../../build/move_bot_sub/move_bot_sub.egg-info/entry_points.txt\n'}
+[10.010354] (move_bot_sub) StdoutLine: {'line': b'writing requirements to ../../../build/move_bot_sub/move_bot_sub.egg-info/requires.txt\n'}
+[10.010464] (move_bot_sub) StdoutLine: {'line': b'writing top-level names to ../../../build/move_bot_sub/move_bot_sub.egg-info/top_level.txt\n'}
+[10.010590] (move_bot_sub) StdoutLine: {'line': b"writing manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'\n"}
+[10.010741] (robot_sim_gui) StdoutLine: {'line': b'running egg_info\n'}
+[10.011133] (robot_sim_gui) StdoutLine: {'line': b'creating ../../../build/robot_sim_gui/robot_sim_gui.egg-info\n'}
+[10.025224] (-) TimerEvent: {}
+[10.025765] (robot_sim_gui) StdoutLine: {'line': b'writing ../../../build/robot_sim_gui/robot_sim_gui.egg-info/PKG-INFO\n'}
+[10.026030] (robot_sim_gui) StdoutLine: {'line': b'writing dependency_links to ../../../build/robot_sim_gui/robot_sim_gui.egg-info/dependency_links.txt\n'}
+[10.026190] (robot_sim_gui) StdoutLine: {'line': b'writing entry points to ../../../build/robot_sim_gui/robot_sim_gui.egg-info/entry_points.txt\n'}
+[10.026283] (robot_sim_gui) StdoutLine: {'line': b'writing requirements to ../../../build/robot_sim_gui/robot_sim_gui.egg-info/requires.txt\n'}
+[10.026370] (robot_sim_gui) StdoutLine: {'line': b'writing top-level names to ../../../build/robot_sim_gui/robot_sim_gui.egg-info/top_level.txt\n'}
+[10.026525] (robot_sim_gui) StdoutLine: {'line': b"writing manifest file '../../../build/robot_sim_gui/robot_sim_gui.egg-info/SOURCES.txt'\n"}
+[10.041317] (move_bot_sub) StdoutLine: {'line': b"reading manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'\n"}
+[10.041559] (move_bot_sub) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[10.042068] (move_bot_sub) StdoutLine: {'line': b"writing manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'\n"}
+[10.042278] (move_bot_sub) StdoutLine: {'line': b'running build\n'}
+[10.042350] (move_bot_sub) StdoutLine: {'line': b'running build_py\n'}
+[10.042454] (move_bot_sub) StdoutLine: {'line': b'creating /workspace/build/move_bot_sub/build\n'}
+[10.042544] (move_bot_sub) StdoutLine: {'line': b'creating /workspace/build/move_bot_sub/build/lib\n'}
+[10.042634] (move_bot_sub) StdoutLine: {'line': b'creating /workspace/build/move_bot_sub/build/lib/move_bot_sub\n'}
+[10.042719] (move_bot_sub) StdoutLine: {'line': b'copying move_bot_sub/__init__.py -> /workspace/build/move_bot_sub/build/lib/move_bot_sub\n'}
+[10.042801] (move_bot_sub) StdoutLine: {'line': b'copying move_bot_sub/publisher_member_function.py -> /workspace/build/move_bot_sub/build/lib/move_bot_sub\n'}
+[10.042946] (move_bot_sub) StdoutLine: {'line': b'running install\n'}
+[10.050520] (move_bot_sub) StdoutLine: {'line': b'running install_lib\n'}
+[10.057929] (robot_sim_gui) StdoutLine: {'line': b"reading manifest file '../../../build/robot_sim_gui/robot_sim_gui.egg-info/SOURCES.txt'\n"}
+[10.058093] (robot_sim_gui) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[10.058685] (robot_sim_gui) StdoutLine: {'line': b"writing manifest file '../../../build/robot_sim_gui/robot_sim_gui.egg-info/SOURCES.txt'\n"}
+[10.058796] (robot_sim_gui) StdoutLine: {'line': b'running build\n'}
+[10.058855] (robot_sim_gui) StdoutLine: {'line': b'running build_py\n'}
+[10.058949] (robot_sim_gui) StdoutLine: {'line': b'creating /workspace/build/robot_sim_gui/build\n'}
+[10.059038] (robot_sim_gui) StdoutLine: {'line': b'creating /workspace/build/robot_sim_gui/build/lib\n'}
+[10.059143] (robot_sim_gui) StdoutLine: {'line': b'creating /workspace/build/robot_sim_gui/build/lib/robot_sim_gui\n'}
+[10.059206] (robot_sim_gui) StdoutLine: {'line': b'copying robot_sim_gui/Robot.py -> /workspace/build/robot_sim_gui/build/lib/robot_sim_gui\n'}
+[10.059313] (robot_sim_gui) StdoutLine: {'line': b'copying robot_sim_gui/__init__.py -> /workspace/build/robot_sim_gui/build/lib/robot_sim_gui\n'}
+[10.059409] (robot_sim_gui) StdoutLine: {'line': b'copying robot_sim_gui/RobotSimCanvas.py -> /workspace/build/robot_sim_gui/build/lib/robot_sim_gui\n'}
+[10.059498] (robot_sim_gui) StdoutLine: {'line': b'copying robot_sim_gui/gui.py -> /workspace/build/robot_sim_gui/build/lib/robot_sim_gui\n'}
+[10.059591] (robot_sim_gui) StdoutLine: {'line': b'copying robot_sim_gui/StatusLight.py -> /workspace/build/robot_sim_gui/build/lib/robot_sim_gui\n'}
+[10.059728] (robot_sim_gui) StdoutLine: {'line': b'running install\n'}
+[10.065887] (move_bot_sub) StdoutLine: {'line': b'creating /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub\n'}
+[10.066002] (move_bot_sub) StdoutLine: {'line': b'copying /workspace/build/move_bot_sub/build/lib/move_bot_sub/__init__.py -> /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub\n'}
+[10.066085] (move_bot_sub) StdoutLine: {'line': b'copying /workspace/build/move_bot_sub/build/lib/move_bot_sub/publisher_member_function.py -> /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub\n'}
+[10.066698] (robot_sim_gui) StdoutLine: {'line': b'running install_lib\n'}
+[10.066760] (move_bot_sub) StdoutLine: {'line': b'byte-compiling /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub/__init__.py to __init__.cpython-312.pyc\n'}
+[10.066899] (move_bot_sub) StdoutLine: {'line': b'byte-compiling /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub/publisher_member_function.py to publisher_member_function.cpython-312.pyc\n'}
+[10.067566] (move_bot_sub) StdoutLine: {'line': b'running install_data\n'}
+[10.067659] (move_bot_sub) StdoutLine: {'line': b'creating /workspace/install/move_bot_sub/share/ament_index\n'}
+[10.067764] (move_bot_sub) StdoutLine: {'line': b'creating /workspace/install/move_bot_sub/share/ament_index/resource_index\n'}
+[10.067827] (move_bot_sub) StdoutLine: {'line': b'creating /workspace/install/move_bot_sub/share/ament_index/resource_index/packages\n'}
+[10.067910] (move_bot_sub) StdoutLine: {'line': b'copying resource/move_bot_sub -> /workspace/install/move_bot_sub/share/ament_index/resource_index/packages\n'}
+[10.067995] (move_bot_sub) StdoutLine: {'line': b'copying package.xml -> /workspace/install/move_bot_sub/share/move_bot_sub\n'}
+[10.068080] (move_bot_sub) StdoutLine: {'line': b'running install_egg_info\n'}
+[10.081862] (robot_sim_gui) StdoutLine: {'line': b'creating /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui\n'}
+[10.081970] (robot_sim_gui) StdoutLine: {'line': b'copying /workspace/build/robot_sim_gui/build/lib/robot_sim_gui/Robot.py -> /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui\n'}
+[10.082068] (robot_sim_gui) StdoutLine: {'line': b'copying /workspace/build/robot_sim_gui/build/lib/robot_sim_gui/__init__.py -> /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui\n'}
+[10.082174] (robot_sim_gui) StdoutLine: {'line': b'copying /workspace/build/robot_sim_gui/build/lib/robot_sim_gui/RobotSimCanvas.py -> /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui\n'}
+[10.082269] (robot_sim_gui) StdoutLine: {'line': b'copying /workspace/build/robot_sim_gui/build/lib/robot_sim_gui/gui.py -> /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui\n'}
+[10.082381] (robot_sim_gui) StdoutLine: {'line': b'copying /workspace/build/robot_sim_gui/build/lib/robot_sim_gui/StatusLight.py -> /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui\n'}
+[10.082903] (robot_sim_gui) StdoutLine: {'line': b'byte-compiling /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui/Robot.py to Robot.cpython-312.pyc\n'}
+[10.083871] (robot_sim_gui) StdoutLine: {'line': b'byte-compiling /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui/__init__.py to __init__.cpython-312.pyc\n'}
+[10.083997] (move_bot_sub) StdoutLine: {'line': b'Copying ../../../build/move_bot_sub/move_bot_sub.egg-info to /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub-0.0.0-py3.12.egg-info\n'}
+[10.084061] (robot_sim_gui) StdoutLine: {'line': b'byte-compiling /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui/RobotSimCanvas.py to RobotSimCanvas.cpython-312.pyc\n'}
+[10.084723] (move_bot_sub) StdoutLine: {'line': b'running install_scripts\n'}
+[10.084830] (robot_sim_gui) StdoutLine: {'line': b'byte-compiling /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui/gui.py to gui.cpython-312.pyc\n'}
+[10.086543] (robot_sim_gui) StdoutLine: {'line': b'byte-compiling /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui/StatusLight.py to StatusLight.cpython-312.pyc\n'}
+[10.087352] (robot_sim_gui) StdoutLine: {'line': b'running install_data\n'}
+[10.087462] (robot_sim_gui) StdoutLine: {'line': b'creating /workspace/install/robot_sim_gui/share/ament_index\n'}
+[10.087603] (robot_sim_gui) StdoutLine: {'line': b'creating /workspace/install/robot_sim_gui/share/ament_index/resource_index\n'}
+[10.087664] (robot_sim_gui) StdoutLine: {'line': b'creating /workspace/install/robot_sim_gui/share/ament_index/resource_index/packages\n'}
+[10.087755] (robot_sim_gui) StdoutLine: {'line': b'copying resource/robot_sim_gui -> /workspace/install/robot_sim_gui/share/ament_index/resource_index/packages\n'}
+[10.087849] (robot_sim_gui) StdoutLine: {'line': b'copying package.xml -> /workspace/install/robot_sim_gui/share/robot_sim_gui\n'}
+[10.087905] (robot_sim_gui) StdoutLine: {'line': b'running install_egg_info\n'}
+[10.103796] (robot_sim_gui) StdoutLine: {'line': b'Copying ../../../build/robot_sim_gui/robot_sim_gui.egg-info to /workspace/install/robot_sim_gui/lib/python3.12/site-packages/robot_sim_gui-0.0.0-py3.12.egg-info\n'}
+[10.104470] (robot_sim_gui) StdoutLine: {'line': b'running install_scripts\n'}
+[10.125352] (-) TimerEvent: {}
+[10.195771] (move_bot_sub) StdoutLine: {'line': b'Installing talker script to /workspace/install/move_bot_sub/lib/move_bot_sub\n'}
+[10.196005] (move_bot_sub) StdoutLine: {'line': b"writing list of installed files to '/workspace/build/move_bot_sub/install.log'\n"}
+[10.215448] (robot_sim_gui) StdoutLine: {'line': b'Installing gui script to /workspace/install/robot_sim_gui/lib/robot_sim_gui\n'}
+[10.215800] (robot_sim_gui) StdoutLine: {'line': b"writing list of installed files to '/workspace/build/robot_sim_gui/install.log'\n"}
+[10.223399] (move_bot_sub) CommandEnded: {'returncode': 0}
+[10.225441] (-) TimerEvent: {}
+[10.228362] (move_bot_sub) JobEnded: {'identifier': 'move_bot_sub', 'rc': 0}
+[10.243964] (robot_sim_gui) CommandEnded: {'returncode': 0}
+[10.249765] (robot_sim_gui) JobEnded: {'identifier': 'robot_sim_gui', 'rc': 0}
+[10.250656] (-) EventReactorShutdown: {}

@@ -1,0 +1,13 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs_srvs/msg/IRSensorData.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs_srvs {
+  module msg {
+    typedef double double__180[180];
+    struct IRSensorData {
+      double__180 distances;
+    };
+  };
+};

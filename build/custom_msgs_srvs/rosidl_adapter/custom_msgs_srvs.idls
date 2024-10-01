@@ -1,0 +1,4 @@
+/workspace/build/custom_msgs_srvs/rosidl_adapter/custom_msgs_srvs:msg/DrivePower.idl
+/workspace/build/custom_msgs_srvs/rosidl_adapter/custom_msgs_srvs:msg/IRSensorData.idl
+/workspace/build/custom_msgs_srvs/rosidl_adapter/custom_msgs_srvs:srv/ContinuationStatus.idl
+/workspace/build/custom_msgs_srvs/rosidl_adapter/custom_msgs_srvs:srv/LightStatus.idl

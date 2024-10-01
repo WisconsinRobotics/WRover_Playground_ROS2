@@ -1,0 +1,36 @@
+running egg_info
+creating ../../../build/move_bot_sub/move_bot_sub.egg-info
+writing ../../../build/move_bot_sub/move_bot_sub.egg-info/PKG-INFO
+writing dependency_links to ../../../build/move_bot_sub/move_bot_sub.egg-info/dependency_links.txt
+writing entry points to ../../../build/move_bot_sub/move_bot_sub.egg-info/entry_points.txt
+writing requirements to ../../../build/move_bot_sub/move_bot_sub.egg-info/requires.txt
+writing top-level names to ../../../build/move_bot_sub/move_bot_sub.egg-info/top_level.txt
+writing manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'
+reading manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../../build/move_bot_sub/move_bot_sub.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /workspace/build/move_bot_sub/build
+creating /workspace/build/move_bot_sub/build/lib
+creating /workspace/build/move_bot_sub/build/lib/move_bot_sub
+copying move_bot_sub/__init__.py -> /workspace/build/move_bot_sub/build/lib/move_bot_sub
+copying move_bot_sub/publisher_member_function.py -> /workspace/build/move_bot_sub/build/lib/move_bot_sub
+running install
+running install_lib
+creating /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub
+copying /workspace/build/move_bot_sub/build/lib/move_bot_sub/__init__.py -> /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub
+copying /workspace/build/move_bot_sub/build/lib/move_bot_sub/publisher_member_function.py -> /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub
+byte-compiling /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub/__init__.py to __init__.cpython-312.pyc
+byte-compiling /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub/publisher_member_function.py to publisher_member_function.cpython-312.pyc
+running install_data
+creating /workspace/install/move_bot_sub/share/ament_index
+creating /workspace/install/move_bot_sub/share/ament_index/resource_index
+creating /workspace/install/move_bot_sub/share/ament_index/resource_index/packages
+copying resource/move_bot_sub -> /workspace/install/move_bot_sub/share/ament_index/resource_index/packages
+copying package.xml -> /workspace/install/move_bot_sub/share/move_bot_sub
+running install_egg_info
+Copying ../../../build/move_bot_sub/move_bot_sub.egg-info to /workspace/install/move_bot_sub/lib/python3.12/site-packages/move_bot_sub-0.0.0-py3.12.egg-info
+running install_scripts
+Installing talker script to /workspace/install/move_bot_sub/lib/move_bot_sub
+writing list of installed files to '/workspace/build/move_bot_sub/install.log'
