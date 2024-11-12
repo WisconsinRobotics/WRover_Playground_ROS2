@@ -6,7 +6,7 @@
 
 - run “colcon build”
   
-- Open a new terminal and source your workspace with “source install/local_setup.bash”
+- Open a new terminal and source your workspace with “source install/local_setup.sh”
   
 - Now you can run “ros2 run robot_sim_gui gui” to run the gui.py file that should start the simulation. If the robot and beacon show up without moving then it is correct.
 
